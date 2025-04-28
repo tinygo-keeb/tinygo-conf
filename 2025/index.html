@@ -1,152 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TinyGo Conference 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            overflow-x: hidden;
+        :root {
+            --primary-color: #00509e; /* 基本の青 */
+            --secondary-color: #007bff; /* 明るい青 */
+            --accent-color: #ffc107; /* アクセントの黄色 */
+            --text-color: #333;
+            --bg-color: #f8f9fa; /* 背景色 */
+            --card-bg-color: #fff;
+            --header-height: 60px; /* ヘッダーの高さ */
         }
+
+        html {
+            scroll-behavior: smooth; /* スムーズスクロール */
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden; /* 横スクロール防止 */
+        }
+
+        /* --- Header --- */
         header {
-            background-color: rgba(0, 80, 158, 0.9);
-            padding: 10px 0;
+            background-color: rgba(0, 80, 158, 0.95);
+            padding: 0 20px; 
             color: white;
             position: fixed;
             width: 100%;
             top: 0;
+            left: 0; 
             z-index: 1000;
-            animation: slideDown 1s ease-in-out;
-        }
-        @keyframes slideDown {
-            from { top: -50px; }
-            to { top: 0; }
-        }
-        header nav {
-            max-width: 800px;
-            margin: auto;
+            height: var(--header-height);
             display: flex;
-            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            animation: slideDown 0.7s ease-out;
+            box-sizing: border-box;
         }
-        header a {
+
+        @keyframes slideDown {
+            from { top: - var(--header-height); opacity: 0; }
+            to { top: 0; opacity: 1; }
+        }
+
+        header .logo {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+            margin-right: auto; /* ロゴを左寄せ */
+        }
+
+        header nav {
+            display: flex;
+            gap: 25px; /* メニュー間のスペース */
+        }
+
+        header nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            padding: 5px 0;
+            position: relative; /* 下線アニメーション用 */
+            transition: color 0.3s ease;
         }
-        header a:hover {
-            text-decoration: underline;
+
+        header nav a::after { /* 下線アニメーション */
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-top: 70px;
+
+        header nav a:hover,
+        header nav a.active { /* ホバー時とアクティブ時 */
+            color: var(--accent-color);
         }
-        h1, h2 { 
-            color: #00509e; 
+
+        header nav a:hover::after,
+        header nav a.active::after {
+            width: 100%; /* 下線を表示 */
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li::before {
-            content: "• ";
-            color: #00509e;
-        }
-        a {
-            color: #00509e;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .parallax {
-            background-image: url('https://example.com/image.jpg');
-            height: 500px;
-            background-attachment: fixed;
+
+        /* --- Hero Section --- */
+        .hero {
+            background-image: linear-gradient(rgba(0, 80, 158, 0.7), rgba(0, 50, 100, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* ダミー画像とグラデーション */
+            /* 画像がない場合は単色背景 */
+            /* background-color: var(--primary-color); */
+            height: 60vh; /* ビューポートの高さの60% */
+            min-height: 400px;
+            background-attachment: fixed; /* パララックス風効果 */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
+            flex-direction: column; /* 縦並び */
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        .fadeIn {
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        footer {
-            background-color: #eee;
-            padding: 20px;
             text-align: center;
-            border-top: 1px solid #ddd;
+            color: white;
+            padding: 20px;
+            margin-top: var(--header-height); /* ヘッダー分のマージン */
+            box-sizing: border-box;
         }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInScaleUp 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            max-width: 700px;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 2s ease-out 0.5s backwards; /* 少し遅れてフェードイン */
+        }
+
+        @keyframes fadeInScaleUp {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 900px; /* 少し幅を広げる */
+            margin: 40px auto; /* セクション間のマージン */
+            padding: 30px;
+            background: var(--card-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            opacity: 0; /* 初期状態は透明 */
+            transform: translateY(30px); /* 少し下に配置 */
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: calc(var(--section-index, 0) * 0.2s); /* セクションごとに遅延 */
+        }
+
+        /* スクロールに応じた表示アニメーション */
+        .fade-in-section {
+             opacity: 0;
+             transform: translateY(40px);
+             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+             opacity: 1;
+             transform: translateY(0);
+        }
+
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            margin-bottom: 40px; /* セクション間のマージン */
+            padding-top: var(--header-height); /* ヘッダー分のスペースを確保 */
+            margin-top: - var(--header-height); /* ネガティブマージンで相殺 */
+        }
+
+
+        h1, h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color); /* 下線 */
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none; /* デフォルトの点を削除 */
+            padding-left: 0; /* 左のパディング削除 */
+        }
+
+        ul li {
+            padding-left: 25px; /* アイコン分のスペース */
+            position: relative; /* アイコン配置のため */
+            margin-bottom: 12px; /* リスト項目間のスペース */
+        }
+
+        ul li::before {
+            content: "✓"; /* チェックマークアイコン */
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .button { /* ボタン風リンク */
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: var(--primary-color);
+            text-decoration: none;
+            color: white;
+            transform: translateY(-2px); /* 少し浮き上がる効果 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+
+        /* --- Map Section --- */
+        #location .map-container {
+             position: relative;
+             padding-bottom: 75%; /* 4:3 Aspect Ratio */
+             height: 0;
+             overflow: hidden;
+             border-radius: 8px; /* 角丸 */
+             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        #location iframe {
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             border: 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #343a40; /* ダークな背景 */
+            padding: 30px 20px;
+            text-align: center;
+            color: #ccc; /* 明るいテキスト色 */
+            margin-top: 50px; /* 上部とのマージン */
+            border-top: 5px solid var(--primary-color); /* 上部にアクセントボーダー */
+        }
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--accent-color);
+        }
+        footer a:hover {
+            color: white;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.2em; }
+            header nav { gap: 15px; }
+            .container { padding: 20px; }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+         @media (max-width: 576px) {
+             header { padding: 0 10px; }
+             header .logo { font-size: 1em; }
+             header nav { display: none; }
+            .hero { height: 50vh; min-height: 300px; }
+            .hero h1 { font-size: 2em; }
+            .hero p { font-size: 1em; }
+            .button { padding: 10px 20px; font-size: 0.9em;}
+        }
+
     </style>
 </head>
 <body>
     <header>
+        <a href="#" class="logo">TinyGo Conf 2025</a>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#session">Session</a>
-            <a href="#cfp">CfP</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#location" class="nav-link">Location</a>
+            <a href="#session" class="nav-link">Session</a>
+            <a href="#cfp" class="nav-link">CfP</a>
         </nav>
     </header>
 
-    <div class="parallax fadeIn">
-        Welcome to TinyGo Conference 2025
-    </div>
+    <main>
+        <div class="hero">
+            <h1>TinyGo Conference 2025</h1>
+        </div>
 
-    <div class="container" id="home">
-        <h1>Welcome to TinyGo Conference 2025</h1>
-        <p>This website provides details about the upcoming TinyGo Conference 2025!</p>
-        <p><strong>Date:</strong> October 11, 2025</p>
-    </div>
+        <section id="about" class="container fade-in-section">
+            <h2>ようこそ TinyGo Conference 2025 へ！</h2>
+            <p>このサイトでは、開催予定の <strong>TinyGo Conference 2025</strong> に関する詳細情報を提供します。<br />随時更新していきますので、ご期待ください。</p>
+            <p><strong>開催日時:</strong> 2025年10月12日(日)</p>
+            <p><strong>会場:</strong> AP秋葉原 (東京都)</p>
+            <p>皆様のご参加を心よりお待ちしております！</p>
+        </section>
 
-    <div class="container" id="session">
-        <h1>Sessions</h1>
-        <p>Information about conference sessions will be available soon.</p>
-    </div>
+        <section id="location" class="container fade-in-section">
+            <h2>開催場所</h2>
+            <p><strong>AP秋葉原</strong><p style="margin-top: 15px;">〒110-0006 東京都台東区秋葉原１−１</p></p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9937963780667!2d139.77273707652478!3d35.701770272580696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ea7032a0ddf%3A0xd8dc34de4c87d6ad!2zQVDnp4vokYnljp8!5e0!3m2!1sja!2sjp!4v1745832689769!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+        </section>
 
-    <div class="container" id="cfp">
-        <h1>Call for Proposals</h1>
-        <p>We are inviting speakers from the community to participate in <strong>TinyGo Conference 2025</strong>. This is a fantastic opportunity to share your knowledge and experiences related to TinyGo. Diverse topics and perspectives are welcome.</p>
+        <section id="session" class="container fade-in-section">
+            <h2>セッション情報</h2>
+            <p>カンファレンスのセッションに関する情報は近日公開予定です。ご期待ください！</p>
+        </section>
 
-        <h2>Categories</h2>
-        <ul>
-            <li><strong>Fundamentals:</strong> Topics for beginners related to TinyGo</li>
-            <li><strong>Applications:</strong> Case studies and real-world projects</li>
-            <li><strong>Tools and Techniques:</strong> Methods to enhance development efficiency</li>
-            <li><strong>IoT and Embedded Systems:</strong> Developing IoT and embedded systems with TinyGo</li>
-            <li><strong>Community and Education:</strong> How TinyGo is utilized in educational settings</li>
-        </ul>
-
-        <h2>Deadlines</h2>
-        <ul>
-            <li><strong>Submission Deadline:</strong> August 31, 2025</li>
-            <li><strong>Notification of Acceptance:</strong> September 15, 2025</li>
-        </ul>
-
-        <p>Submit proposals through the form on the official website. For any questions, please contact us at <a href="mailto:email@example.com">email@example.com</a>.</p>
-
-        <p>We look forward to your amazing ideas!</p>
-    </div>
+        <section id="cfp" class="container fade-in-section">
+            <h2>発表者募集 (Call for Proposals)</h2>
+            <p>発表者募集は近日公開予定です。ご期待ください！</p>
+        </section>
+    </main>
 
     <footer>
-        TinyGo Keeb JAPAN
+        <p>&copy; 2025 一般社団法人Gophers Japan. All Rights Reserved.</p>
+        <p>
+            <a href="#">プライバシーポリシー</a> | <a href="#">お問い合わせ</a>
+        </p>
     </footer>
+
+<script>
+    // スクロールに応じたフェードインアニメーション
+    const sections = document.querySelectorAll('.fade-in-section');
+
+    const observerOptions = {
+        root: null, // ビューポートをルートとする
+        rootMargin: '0px',
+        threshold: 0.1 // 10%表示されたらトリガー
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // 一度表示されたら監視を停止する場合
+                // observer.unobserve(entry.target);
+            }
+            //　画面外に出たら非表示に戻す場合（オプション）
+             else {
+                 // entry.target.classList.remove('is-visible');
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // ナビゲーションのアクティブ状態制御
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pageSections = document.querySelectorAll('section'); // または data-section 属性などでセクションを特定
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        pageSections.forEach(section => {
+            const sectionTop = section.offsetTop - var(--header-height) - 10; // ヘッダー高さ + 少し余裕
+            // const sectionHeight = section.clientHeight; // セクションの高さを使う場合
+            // if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+             if (pageYOffset >= sectionTop) { // よりシンプルな判定
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+        // 最上部にいる場合は About をアクティブに（オプション）
+        if (!current && window.pageYOffset < window.innerHeight / 2) {
+             const aboutLink = document.querySelector('a[href="#about"]');
+             if(aboutLink) aboutLink.classList.add('active');
+        }
+    });
+
+</script>
+
 </body>
 </html>

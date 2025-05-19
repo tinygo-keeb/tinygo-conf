@@ -1,3 +1,4 @@
 # tinygo-conf
 
-https://flourishing-puffpuff-882e12.netlify.app/
+conf.tinygo-keeb.org へのリダイレクト用リポジトリです。
+index.htmlとリダイレクト用JavaScriptを含んでいます。

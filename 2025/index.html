@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TinyGo Conference 2025</title>
-    
+
     <!-- ファビコン設定 -->
     <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon/favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="favicon/favicon-16x16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
-    
+
     <!-- OGP設定 -->
     <meta property="og:title" content="TinyGo Conference 2025">
     <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
     <meta name="twitter:title" content="TinyGo Conference 2025">
     <meta name="twitter:description" content="小さくても強力なGoの世界へようこそ。TinyGo Conference 2025は、2025年10月12日(日)にAP秋葉原で開催されます。">
     <meta name="twitter:image" content="https://conf.tinygo-keeb.org/2025/images/ogp.png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -57,12 +57,12 @@
         /* --- Header --- */
         header {
             background-color: rgba(0, 80, 158, 0.95);
-            padding: 0 20px; 
+            padding: 0 20px;
             color: white;
             position: fixed;
             width: 100%;
             top: 0;
-            left: 0; 
+            left: 0;
             z-index: 1000;
             height: var(--header-height);
             display: flex;
@@ -189,8 +189,8 @@
         @media (max-width: 576px) {
             header { padding: 10px; }
             header .logo { font-size: 1em; }
-            header nav { 
-                gap: 15px; 
+            header nav {
+                gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
@@ -466,6 +466,14 @@
                 <h2>Blog</h2>
                 2025/08/19 - <a href="./blog/20250819.html" target="_blank">We will be holding TinyGo Conference 2025 in JAPAN</a> (japanese)<br>
             </div>
+            <div class="lang-ja">
+                <h2>ブログ</h2>
+                2025/08/31 - <a href="./blog/20250831.html" target="_blank">ワークショップ紹介① gopher‑board‑workshop</a><br>
+            </div>
+            <div class="lang-en">
+                <h2>Blog</h2>
+                2025/08/31 - <a href="./blog/20250831.html" target="_blank">Introduce of Workshop① gopher‑board‑workshop</a> (japanese)<br>
+            </div>
         </section>
 
         <section id="participation" class="container fade-in-section">
@@ -527,16 +535,16 @@
         const browserLang = navigator.language || navigator.userLanguage;
         // 日本語かそれ以外かで初期言語を設定
         let defaultLang = browserLang.startsWith('ja') ? 'ja' : 'en';
-        
+
         // ローカルストレージから保存された言語設定があれば読み込む
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang) {
             defaultLang = savedLang;
         }
-        
+
         // 初期言語を設定
         setLanguage(defaultLang);
-        
+
         // 言語切り替えボタンの設定
         const langButtons = document.querySelectorAll('.lang-btn');
         langButtons.forEach(btn => {
@@ -547,12 +555,12 @@
             });
         });
     }
-    
+
     // 言語を設定する関数
     function setLanguage(lang) {
         // HTMLのlang属性を設定
         document.documentElement.setAttribute('lang', lang);
-        
+
         // ボタンのアクティブ状態を更新
         const langButtons = document.querySelectorAll('.lang-btn');
         langButtons.forEach(btn => {
@@ -563,7 +571,7 @@
             }
         });
     }
-    
+
     // ページ読み込み時に言語初期化を実行
     document.addEventListener('DOMContentLoaded', initLanguage);
 

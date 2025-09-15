@@ -30,368 +30,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #00509e; /* 基本の青 */
-            --secondary-color: #007bff; /* 明るい青 */
-            --accent-color: #ffc107; /* アクセントの黄色 */
-            --text-color: #333;
-            --bg-color: #f8f9fa; /* 背景色 */
-            --card-bg-color: #fff;
-            --header-height: 60px; /* ヘッダーの高さ */
-        }
-
-        html {
-            scroll-behavior: smooth; /* スムーズスクロール */
-        }
-
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow-x: hidden; /* 横スクロール防止 */
-        }
-
-        /* --- Header --- */
-        header {
-            background-color: rgba(0, 80, 158, 0.95);
-            padding: 0 20px;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            height: var(--header-height);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            animation: slideDown 0.7s ease-out;
-            box-sizing: border-box;
-        }
-
-        @keyframes slideDown {
-            from { top: - var(--header-height); opacity: 0; }
-            to { top: 0; opacity: 1; }
-        }
-
-        header .logo {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: white;
-            text-decoration: none;
-            margin-right: 20px; /* メニューとの間隔を調整 */
-        }
-
-        header nav {
-            display: flex;
-            gap: 25px; /* メニュー間のスペース */
-            flex-grow: 1;
-            justify-content: center;
-        }
-
-        header nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 0;
-            position: relative; /* 下線アニメーション用 */
-            transition: color 0.3s ease;
-        }
-
-        header nav a::after { /* 下線アニメーション */
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background-color: var(--accent-color);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        header nav a:hover,
-        header nav a.active { /* ホバー時とアクティブ時 */
-            color: var(--accent-color);
-        }
-
-        header nav a:hover::after,
-        header nav a.active::after {
-            width: 100%; /* 下線を表示 */
-        }
-
-        /* 言語切り替えボタン用スタイル */
-        .lang-switch {
-            position: relative; /* absoluteからrelativeに変更 */
-            right: auto; /* 位置指定を削除 */
-            top: auto; /* 位置指定を削除 */
-            transform: none; /* 変換を削除 */
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-left: 20px; /* 左側の余白追加 */
-        }
-
-        .lang-btn {
-            background: transparent;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.5);
-            border-radius: 4px;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-        }
-
-        .lang-btn:hover, .lang-btn.active {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            border-color: var(--accent-color);
-        }
-
-        /* 言語コンテンツ切り替え */
-        .lang-en, .lang-ja {
-            display: none;
-        }
-
-        html[lang="en"] .lang-en,
-        html[lang="ja"] .lang-ja {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                height: auto;
-                padding: 10px 20px;
-            }
-            header .logo {
-                margin: 5px 0;
-            }
-            header nav {
-                margin: 10px 0;
-                justify-content: center;
-            }
-            .lang-switch {
-                margin: 10px 0 5px;
-            }
-            .hero {
-                margin-top: auto; /* ヘッダーの高さが動的になるため自動調整 */
-                padding-top: calc(var(--header-height) + 20px);
-            }
-        }
-
-        @media (max-width: 576px) {
-            header { padding: 10px; }
-            header .logo { font-size: 1em; }
-            header nav {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .hero { height: 50vh; min-height: 300px; }
-            .hero h1 { font-size: 2em; }
-            .hero p { font-size: 1em; }
-            .button { padding: 10px 20px; font-size: 0.9em;}
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            background-image: linear-gradient(rgba(0, 80, 158, 0.7), rgba(0, 50, 100, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* ダミー画像とグラデーション */
-            /* 画像がない場合は単色背景 */
-            /* background-color: var(--primary-color); */
-            height: 60vh; /* ビューポートの高さの60% */
-            min-height: 400px;
-            background-attachment: fixed; /* パララックス風効果 */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            flex-direction: column; /* 縦並び */
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            margin-top: var(--header-height); /* ヘッダー分のマージン */
-            box-sizing: border-box;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            animation: fadeInScaleUp 1.5s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.4em;
-            max-width: 700px;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-            animation: fadeIn 2s ease-out 0.5s backwards; /* 少し遅れてフェードイン */
-        }
-
-        @keyframes fadeInScaleUp {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* --- Main Content --- */
-        .container {
-            max-width: 900px; /* 少し幅を広げる */
-            margin: 40px auto; /* セクション間のマージン */
-            padding: 30px;
-            background: var(--card-bg-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            opacity: 0; /* 初期状態は透明 */
-            transform: translateY(30px); /* 少し下に配置 */
-            animation: fadeInUp 1s ease-out forwards;
-            animation-delay: calc(var(--section-index, 0) * 0.2s); /* セクションごとに遅延 */
-        }
-
-        /* スクロールに応じた表示アニメーション */
-        .fade-in-section {
-             opacity: 0;
-             transform: translateY(40px);
-             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-in-section.is-visible {
-             opacity: 1;
-             transform: translateY(0);
-        }
-
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        section {
-            margin-bottom: 40px; /* セクション間のマージン */
-            padding-top: var(--header-height); /* ヘッダー分のスペースを確保 */
-            margin-top: - var(--header-height); /* ネガティブマージンで相殺 */
-        }
-
-
-        h1, h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color); /* 下線 */
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-        }
-        h1 { font-size: 2.2em; }
-        h2 { font-size: 1.8em; }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        strong {
-            color: var(--primary-color);
-        }
-
-        ul {
-            list-style: none; /* デフォルトの点を削除 */
-            padding-left: 0; /* 左のパディング削除 */
-        }
-
-        ul li {
-            padding-left: 25px; /* アイコン分のスペース */
-            position: relative; /* アイコン配置のため */
-            margin-bottom: 12px; /* リスト項目間のスペース */
-        }
-
-        ul li::before {
-            content: "✓"; /* チェックマークアイコン */
-            color: var(--secondary-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        .button { /* ボタン風リンク */
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background-color: var(--primary-color);
-            text-decoration: none;
-            color: white;
-            transform: translateY(-2px); /* 少し浮き上がる効果 */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-
-
-        /* --- Map Section --- */
-        #location .map-container {
-             position: relative;
-             padding-bottom: 75%; /* 4:3 Aspect Ratio */
-             height: 0;
-             overflow: hidden;
-             border-radius: 8px; /* 角丸 */
-             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        #location iframe {
-             position: absolute;
-             top: 0;
-             left: 0;
-             width: 100%;
-             height: 100%;
-             border: 0;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #343a40; /* ダークな背景 */
-            padding: 30px 20px;
-            text-align: center;
-            color: #ccc; /* 明るいテキスト色 */
-            margin-top: 50px; /* 上部とのマージン */
-            border-top: 5px solid var(--primary-color); /* 上部にアクセントボーダー */
-        }
-        footer p {
-            margin: 5px 0;
-            font-size: 0.9em;
-        }
-        footer a {
-            color: var(--accent-color);
-        }
-        footer a:hover {
-            color: white;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -410,6 +49,10 @@
                 <span class="lang-en">Sessions</span>
             </a>
             <a href="#cfp" class="nav-link">CfP</a>
+            <a href="#sponsors" class="nav-link">
+                <span class="lang-ja">スポンサー</span>
+                <span class="lang-en">Sponsors</span>
+            </a>
         </nav>
         <div class="lang-switch">
             <button class="lang-btn" data-lang="ja">日本語</button>
@@ -506,6 +149,43 @@
                 <p>We have started accepting proposals for TinyGo Conference 2025!</p>
                 <p>We are looking for a wide range of topics including technical presentations about TinyGo, case studies, library introductions, and more.</p>
                 <a href="https://sessionize.com/tinygo-conference-2025-in-japan" target="_blank" class="button">Submit Your Proposal</a>
+            </div>
+        </section>
+
+        <section id="sponsors" class="container fade-in-section">
+            <div class="lang-ja">
+                <h2>スポンサー</h2>
+                <p>TinyGo Conference 2025を支援してくださる企業・団体の皆様に感謝いたします。</p>
+                <div class="sponsors-grid">
+                    <div class="sponsor-item">
+                        <a href="https://jlcpcb.com" target="_blank" rel="noopener noreferrer">
+                            <img src="images/jlcpcb.png" alt="JLCPCB" class="sponsor-logo">
+                        </a>
+                    </div>
+                    <!-- 他のスポンサー用のプレースホルダー -->
+                    <div class="sponsor-item sponsor-placeholder">
+                        <div class="sponsor-coming-soon">
+                            <span>Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lang-en">
+                <h2>Sponsors</h2>
+                <p>We thank all the companies and organizations supporting TinyGo Conference 2025.</p>
+                <div class="sponsors-grid">
+                    <div class="sponsor-item">
+                        <a href="https://jlcpcb.com" target="_blank" rel="noopener noreferrer">
+                            <img src="images/jlcpcb.png" alt="JLCPCB" class="sponsor-logo">
+                        </a>
+                    </div>
+                    <!-- Placeholder for other sponsors -->
+                    <div class="sponsor-item sponsor-placeholder">
+                        <div class="sponsor-coming-soon">
+                            <span>Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

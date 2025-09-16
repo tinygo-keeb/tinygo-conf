@@ -403,6 +403,354 @@ a:hover {
     }
 }
 
+/* --- Speaker Cards --- */
+.speakers-container {
+    margin-top: 2rem;
+}
+
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.speaker-card {
+    background: var(--card-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.speaker-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary-color);
+}
+
+.speaker-photo-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.speaker-info {
+    text-align: center;
+    width: 100%;
+}
+
+.speaker-name {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.speaker-tagline {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+    font-style: italic;
+}
+
+.speaker-sessions {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 1rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.speaker-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    color: #666;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- Main Tabs (Sessions & Speakers) --- */
+.main-tabs {
+    margin-top: 1.5rem;
+}
+
+.main-tab-buttons {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.main-tab-button {
+    padding: 1rem 2rem;
+    background: #f0f0f0;
+    border: none;
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.main-tab-button:hover {
+    background: #e0e0e0;
+    color: var(--primary-color);
+}
+
+.main-tab-button.active {
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.main-tab-contents {
+    min-height: 400px;
+}
+
+.main-tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.main-tab-content.active {
+    display: block;
+}
+
+/* --- Session Tabs --- */
+.session-tabs {
+    margin-top: 1rem;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab-button:hover {
+    color: var(--primary-color);
+    background: rgba(0, 80, 158, 0.05);
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    font-weight: bold;
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-contents {
+    min-height: 300px;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.session-card {
+    background: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.session-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+}
+
+.session-time {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.session-time .time {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.session-time .room {
+    background: var(--accent-color);
+    color: #333;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.session-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.session-speakers {
+    margin: 0.5rem 0;
+}
+
+.speaker-name {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.session-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    display: inline-block;
+    background: #e0e0e0;
+    color: #555;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.session-description {
+    color: #555;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .tab-buttons {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        width: 100%;
+        text-align: left;
+    }
+
+    .session-card {
+        padding: 1rem;
+    }
+
+    .session-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- Staff Cards --- */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.staff-card {
+    background: var(--card-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.staff-photo-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00509e 0%, #007bff 100%);
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.staff-name {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.staff-role {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.staff-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- Footer --- */
 footer {
     background-color: #343a40; /* ダークな背景 */

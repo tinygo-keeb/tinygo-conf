@@ -44,14 +44,17 @@
                 <span class="lang-ja">会場</span>
                 <span class="lang-en">Location</span>
             </a>
-            <a href="#session" class="nav-link">
-                <span class="lang-ja">セッション</span>
-                <span class="lang-en">Sessions</span>
-            </a>
-            <a href="#cfp" class="nav-link">CfP</a>
             <a href="#sponsors" class="nav-link">
                 <span class="lang-ja">スポンサー</span>
                 <span class="lang-en">Sponsors</span>
+            </a>
+            <a href="#session" class="nav-link">
+                <span class="lang-ja">セッション・登壇者</span>
+                <span class="lang-en">Sessions & Speakers</span>
+            </a>
+            <a href="#staff" class="nav-link">
+                <span class="lang-ja">スタッフ</span>
+                <span class="lang-en">Staff</span>
             </a>
         </nav>
         <div class="lang-switch">
@@ -100,56 +103,6 @@
             </div>
         </section>
 
-        <section id="participation" class="container fade-in-section">
-            <div class="lang-ja">
-                <h2>ブログ</h2>
-                <p>ブログ記事を読み込み中...</p>
-            </div>
-            <div class="lang-en">
-                <h2>Blog</h2>
-                <p>Loading blog posts...</p>
-            </div>
-        </section>
-
-        <section id="participation" class="container fade-in-section">
-            <div class="lang-ja">
-                <h2>イベント参加について</h2>
-                <p>以下の URL から申し込みすることができます。参加費は無料です。</p>
-                <a href="https://tinygo-keeb.connpass.com/event/353267/" target="_blank" class="button">イベント参加申し込みはこちら</a>
-            </div>
-            <div class="lang-en">
-                <h2>Information about participation</h2>
-                <p>You can register using the URL below. Participation is free of charge.</p>
-                <a href="https://tinygo-keeb.connpass.com/event/353267/" target="_blank" class="button">Click here to register for the event</a>
-            </div>
-        </section>
-
-        <section id="session" class="container fade-in-section">
-            <div class="lang-ja">
-                <h2>セッション情報</h2>
-                <p>カンファレンスのセッションに関する情報は近日公開予定です。ご期待ください！</p>
-            </div>
-            <div class="lang-en">
-                <h2>Session Information</h2>
-                <p>Information about conference sessions will be coming soon. Stay tuned!</p>
-            </div>
-        </section>
-
-        <section id="cfp" class="container fade-in-section">
-            <div class="lang-ja">
-                <h2>発表者募集 (Call for Proposals)</h2>
-                <p>TinyGo Conference 2025の発表者募集を開始しました！</p>
-                <p>TinyGoに関する技術的な発表、事例紹介、ライブラリの紹介など、幅広いトピックを募集しています。</p>
-                <a href="https://sessionize.com/tinygo-conference-2025-in-japan" target="_blank" class="button">発表応募はこちら</a>
-            </div>
-            <div class="lang-en">
-                <h2>Call for Proposals</h2>
-                <p>We have started accepting proposals for TinyGo Conference 2025!</p>
-                <p>We are looking for a wide range of topics including technical presentations about TinyGo, case studies, library introductions, and more.</p>
-                <a href="https://sessionize.com/tinygo-conference-2025-in-japan" target="_blank" class="button">Submit Your Proposal</a>
-            </div>
-        </section>
-
         <section id="sponsors" class="container fade-in-section">
             <div class="lang-ja">
                 <h2>スポンサー</h2>
@@ -182,6 +135,145 @@
                         <div class="sponsor-coming-soon">
                             <span>Coming Soon</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="participation" class="container fade-in-section">
+            <div class="lang-ja">
+                <h2>ブログ</h2>
+                <p>ブログ記事を読み込み中...</p>
+            </div>
+            <div class="lang-en">
+                <h2>Blog</h2>
+                <p>Loading blog posts...</p>
+            </div>
+        </section>
+
+        <section id="participation" class="container fade-in-section">
+            <div class="lang-ja">
+                <h2>イベント参加について</h2>
+                <p>以下の URL から申し込みすることができます。参加費は無料です。</p>
+                <a href="https://tinygo-keeb.connpass.com/event/353267/" target="_blank" class="button">イベント参加申し込みはこちら</a>
+            </div>
+            <div class="lang-en">
+                <h2>Information about participation</h2>
+                <p>You can register using the URL below. Participation is free of charge.</p>
+                <a href="https://tinygo-keeb.connpass.com/event/353267/" target="_blank" class="button">Click here to register for the event</a>
+            </div>
+        </section>
+
+        <section id="session" class="container fade-in-section">
+            <div class="lang-ja">
+                <h2>セッション・登壇者</h2>
+                <div class="main-tabs">
+                    <div class="main-tab-buttons">
+                        <button class="main-tab-button active" data-main-tab="sessions-ja">セッション</button>
+                        <button class="main-tab-button" data-main-tab="speakers-ja">登壇者</button>
+                    </div>
+                    <div class="main-tab-contents">
+                        <div class="main-tab-content active" id="sessions-ja">
+                            <p>セッション情報を読み込み中...</p>
+                        </div>
+                        <div class="main-tab-content" id="speakers-ja">
+                            <div class="speakers-container">
+                                <p>登壇者情報を読み込み中...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lang-en">
+                <h2>Sessions & Speakers</h2>
+                <div class="main-tabs">
+                    <div class="main-tab-buttons">
+                        <button class="main-tab-button active" data-main-tab="sessions-en">Sessions</button>
+                        <button class="main-tab-button" data-main-tab="speakers-en">Speakers</button>
+                    </div>
+                    <div class="main-tab-contents">
+                        <div class="main-tab-content active" id="sessions-en">
+                            <p>Loading session information...</p>
+                        </div>
+                        <div class="main-tab-content" id="speakers-en">
+                            <div class="speakers-container">
+                                <p>Loading speakers...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="cfp" class="container fade-in-section">
+            <div class="lang-ja">
+                <h2>発表者募集 (Call for Proposals)</h2>
+                <p>TinyGo Conference 2025の発表者募集を開始しました！</p>
+                <p>TinyGoに関する技術的な発表、事例紹介、ライブラリの紹介など、幅広いトピックを募集しています。</p>
+                <a href="https://sessionize.com/tinygo-conference-2025-in-japan" target="_blank" class="button">発表応募はこちら</a>
+            </div>
+            <div class="lang-en">
+                <h2>Call for Proposals</h2>
+                <p>We have started accepting proposals for TinyGo Conference 2025!</p>
+                <p>We are looking for a wide range of topics including technical presentations about TinyGo, case studies, library introductions, and more.</p>
+                <a href="https://sessionize.com/tinygo-conference-2025-in-japan" target="_blank" class="button">Submit Your Proposal</a>
+            </div>
+        </section> -->
+
+        <section id="staff" class="container fade-in-section">
+            <div class="lang-ja">
+                <h2>スタッフ</h2>
+                <p>TinyGo Conference 2025 の運営スタッフです。</p>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <div class="staff-photo-placeholder"></div>
+                        <h3 class="staff-name">sago35</h3>
+                        <p class="staff-role">主催者</p>
+                        <div class="staff-links">
+                            <a href="https://twitter.com/sago35tk" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/sago35" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="staff-card">
+                        <div class="staff-photo-placeholder"></div>
+                        <h3 class="staff-name">ご協力いただける方募集中</h3>
+                        <p class="staff-role">スタッフ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lang-en">
+                <h2>Staff</h2>
+                <p>The organizing staff of TinyGo Conference 2025.</p>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <div class="staff-photo-placeholder"></div>
+                        <h3 class="staff-name">sago35</h3>
+                        <p class="staff-role">Organizer</p>
+                        <div class="staff-links">
+                            <a href="https://twitter.com/sago35tk" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/sago35" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="staff-card">
+                        <div class="staff-photo-placeholder"></div>
+                        <h3 class="staff-name">Looking for volunteers</h3>
+                        <p class="staff-role">Staff</p>
                     </div>
                 </div>
             </div>
@@ -307,6 +399,9 @@
 
 <!-- WordPress Blog Fetch Script -->
 <script src="blog-fetch.js"></script>
+
+<!-- Sessionize Session and Speaker Fetch Script -->
+<script src="session-speaker-fetch.js"></script>
 
 </body>
 </html>

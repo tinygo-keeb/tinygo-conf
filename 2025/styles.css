@@ -1,0 +1,772 @@
+:root {
+    --primary-color: #00509e; /* 基本の青 */
+    --secondary-color: #007bff; /* 明るい青 */
+    --accent-color: #ffc107; /* アクセントの黄色 */
+    --text-color: #333;
+    --bg-color: #f8f9fa; /* 背景色 */
+    --card-bg-color: #fff;
+    --header-height: 60px; /* ヘッダーの高さ */
+}
+
+html {
+    scroll-behavior: smooth; /* スムーズスクロール */
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* 横スクロール防止 */
+}
+
+/* --- Header --- */
+header {
+    background-color: rgba(0, 80, 158, 0.95);
+    padding: 0 20px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: slideDown 0.7s ease-out;
+    box-sizing: border-box;
+}
+
+@keyframes slideDown {
+    from { top: - var(--header-height); opacity: 0; }
+    to { top: 0; opacity: 1; }
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px; /* メニューとの間隔を調整 */
+}
+
+header nav {
+    display: flex;
+    gap: 25px; /* メニュー間のスペース */
+    flex-grow: 1;
+    justify-content: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative; /* 下線アニメーション用 */
+    transition: color 0.3s ease;
+}
+
+header nav a::after { /* 下線アニメーション */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+header nav a:hover,
+header nav a.active { /* ホバー時とアクティブ時 */
+    color: var(--accent-color);
+}
+
+header nav a:hover::after,
+header nav a.active::after {
+    width: 100%; /* 下線を表示 */
+}
+
+/* 言語切り替えボタン用スタイル */
+.lang-switch {
+    position: relative; /* absoluteからrelativeに変更 */
+    right: auto; /* 位置指定を削除 */
+    top: auto; /* 位置指定を削除 */
+    transform: none; /* 変換を削除 */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px; /* 左側の余白追加 */
+}
+
+.lang-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover, .lang-btn.active {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border-color: var(--accent-color);
+}
+
+/* 言語コンテンツ切り替え */
+.lang-en, .lang-ja {
+    display: none;
+}
+
+html[lang="en"] .lang-en,
+html[lang="ja"] .lang-ja {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+    }
+    header .logo {
+        margin: 5px 0;
+    }
+    header nav {
+        margin: 10px 0;
+        justify-content: center;
+    }
+    .lang-switch {
+        margin: 10px 0 5px;
+    }
+    .hero {
+        margin-top: auto; /* ヘッダーの高さが動的になるため自動調整 */
+        padding-top: calc(var(--header-height) + 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    header { padding: 10px; }
+    header .logo { font-size: 1em; }
+    header nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero { height: 50vh; min-height: 300px; }
+    .hero h1 { font-size: 2em; }
+    .hero p { font-size: 1em; }
+    .button { padding: 10px 20px; font-size: 0.9em;}
+}
+
+/* --- Hero Section --- */
+.hero {
+    background-image: linear-gradient(rgba(0, 80, 158, 0.7), rgba(0, 50, 100, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* ダミー画像とグラデーション */
+    /* 画像がない場合は単色背景 */
+    /* background-color: var(--primary-color); */
+    height: 60vh; /* ビューポートの高さの60% */
+    min-height: 400px;
+    background-attachment: fixed; /* パララックス風効果 */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: var(--header-height); /* ヘッダー分のマージン */
+    box-sizing: border-box;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeInScaleUp 1.5s ease-out;
+}
+
+.hero p {
+    font-size: 1.4em;
+    max-width: 700px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 2s ease-out 0.5s backwards; /* 少し遅れてフェードイン */
+}
+
+@keyframes fadeInScaleUp {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Main Content --- */
+.container {
+    max-width: 900px; /* 少し幅を広げる */
+    margin: 40px auto; /* セクション間のマージン */
+    padding: 30px;
+    background: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    opacity: 0; /* 初期状態は透明 */
+    transform: translateY(30px); /* 少し下に配置 */
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: calc(var(--section-index, 0) * 0.2s); /* セクションごとに遅延 */
+}
+
+/* スクロールに応じた表示アニメーション */
+.fade-in-section {
+     opacity: 0;
+     transform: translateY(40px);
+     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-section.is-visible {
+     opacity: 1;
+     transform: translateY(0);
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    margin-bottom: 40px; /* セクション間のマージン */
+    padding-top: var(--header-height); /* ヘッダー分のスペースを確保 */
+    margin-top: - var(--header-height); /* ネガティブマージンで相殺 */
+}
+
+
+h1, h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color); /* 下線 */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 15px;
+}
+
+strong {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none; /* デフォルトの点を削除 */
+    padding-left: 0; /* 左のパディング削除 */
+}
+
+ul li {
+    padding-left: 25px; /* アイコン分のスペース */
+    position: relative; /* アイコン配置のため */
+    margin-bottom: 12px; /* リスト項目間のスペース */
+}
+
+ul li::before {
+    content: "✓"; /* チェックマークアイコン */
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.button { /* ボタン風リンク */
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--primary-color);
+    text-decoration: none;
+    color: white;
+    transform: translateY(-2px); /* 少し浮き上がる効果 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+
+/* --- Map Section --- */
+#location .map-container {
+     position: relative;
+     padding-bottom: 75%; /* 4:3 Aspect Ratio */
+     height: 0;
+     overflow: hidden;
+     border-radius: 8px; /* 角丸 */
+     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#location iframe {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     border: 0;
+}
+
+/* --- Sponsors Section --- */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.sponsor-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+.sponsor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.sponsor-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.sponsor-placeholder {
+    background: #f0f0f0;
+    border: 2px dashed #ddd;
+}
+
+.sponsor-placeholder:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sponsor-coming-soon {
+    color: #999;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .sponsors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+    
+    .sponsor-item {
+        max-width: 200px;
+        padding: 15px;
+    }
+}
+
+/* --- Speaker Cards --- */
+.speakers-container {
+    margin-top: 2rem;
+}
+
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.speaker-card {
+    background: var(--card-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.speaker-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary-color);
+}
+
+.speaker-photo-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.speaker-info {
+    text-align: center;
+    width: 100%;
+}
+
+.speaker-name {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.speaker-tagline {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+    font-style: italic;
+}
+
+.speaker-sessions {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 1rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.speaker-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    color: #666;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- Main Tabs (Sessions & Speakers) --- */
+.main-tabs {
+    margin-top: 1.5rem;
+}
+
+.main-tab-buttons {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.main-tab-button {
+    padding: 1rem 2rem;
+    background: #f0f0f0;
+    border: none;
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.main-tab-button:hover {
+    background: #e0e0e0;
+    color: var(--primary-color);
+}
+
+.main-tab-button.active {
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.main-tab-contents {
+    min-height: 400px;
+}
+
+.main-tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.main-tab-content.active {
+    display: block;
+}
+
+/* --- Session Tabs --- */
+.session-tabs {
+    margin-top: 1rem;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab-button:hover {
+    color: var(--primary-color);
+    background: rgba(0, 80, 158, 0.05);
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    font-weight: bold;
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-contents {
+    min-height: 300px;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.session-card {
+    background: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.session-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+}
+
+.session-time {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.session-time .time {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.session-time .room {
+    background: var(--accent-color);
+    color: #333;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.session-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.session-speakers {
+    margin: 0.5rem 0;
+}
+
+.speaker-name {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.session-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    display: inline-block;
+    background: #e0e0e0;
+    color: #555;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.session-description {
+    color: #555;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .tab-buttons {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        width: 100%;
+        text-align: left;
+    }
+
+    .session-card {
+        padding: 1rem;
+    }
+
+    .session-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- Staff Cards --- */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.staff-card {
+    background: var(--card-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.staff-photo-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00509e 0%, #007bff 100%);
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.staff-name {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.staff-role {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.staff-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #343a40; /* ダークな背景 */
+    padding: 30px 20px;
+    text-align: center;
+    color: #ccc; /* 明るいテキスト色 */
+    margin-top: 50px; /* 上部とのマージン */
+    border-top: 5px solid var(--primary-color); /* 上部にアクセントボーダー */
+}
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+footer a {
+    color: var(--accent-color);
+}
+footer a:hover {
+    color: white;
+}

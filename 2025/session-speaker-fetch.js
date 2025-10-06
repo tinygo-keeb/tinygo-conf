@@ -291,16 +291,28 @@ function createScheduleView(timeSlots, lang) {
         return lang === 'ja' ? '<p>スケジュール情報がありません。</p>' : '<p>No schedule information available.</p>';
     }
 
-    // Extract all unique rooms
-    const rooms = [];
+    // Extract all unique rooms and sort them
+    const roomsSet = new Set();
     timeSlots.forEach(slot => {
         if (slot.rooms) {
             slot.rooms.forEach(room => {
-                if (room.name && !rooms.includes(room.name)) {
-                    rooms.push(room.name);
+                if (room.name) {
+                    roomsSet.add(room.name);
                 }
             });
         }
+    });
+
+    // Convert to array and sort: B, C, D order
+    const rooms = Array.from(roomsSet).sort((a, b) => {
+        // Extract room letters/numbers for comparison
+        const getOrder = (roomName) => {
+            if (roomName.includes('B')) return 1;
+            if (roomName.includes('C')) return 2;
+            if (roomName.includes('D')) return 3;
+            return 0; // Other rooms come first
+        };
+        return getOrder(a) - getOrder(b);
     });
 
     let html = '<div class="timetable">';

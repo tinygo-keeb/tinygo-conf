@@ -1,5 +1,5 @@
 // Combined session and speaker fetch script
-const SESSION_API_URL = 'https://sessionize.com/api/v2/y2g3or7x/view/Sessions';
+const SESSION_API_URL = 'https://sessionize.com/api/v2/y2g3or7x/view/GridSmart';
 const SPEAKER_API_URL = 'https://sessionize.com/api/v2/y2g3or7x/view/SpeakerWall';
 
 async function fetchSessionsAndSpeakers() {
@@ -27,6 +27,7 @@ async function fetchSessions() {
         }
 
         const data = await response.json();
+        console.log('GridSmart API data:', data); // Debug log
 
         if (!data || data.length === 0) {
             sessionContainerJa.innerHTML = '<p>セッション情報は近日公開予定です。</p>';
@@ -92,34 +93,75 @@ async function fetchSpeakers() {
 function createSessionTabs(data, lang) {
     let html = '<div class="session-tabs">';
 
-    // Create tab buttons for session categories
+    // GridSmart API returns array of days
+    // Create main tab buttons with view toggle
+    html += '<div class="main-session-tabs">';
+
+    // List view tabs
+    html += '<div class="session-tab-group">';
+    html += `<div class="tab-group-title">${lang === 'ja' ? 'リスト表示' : 'List View'}</div>`;
     html += '<div class="tab-buttons">';
-    data.forEach((group, index) => {
-        const isActive = index === 0 ? 'active' : '';
-        const groupName = group.groupName || `Day ${index + 1}`;
-        html += `<button class="tab-button ${isActive}" data-tab="${lang}-session-${index}">${groupName}</button>`;
+    data.forEach((day, index) => {
+        const groupName = formatDate(day.date, lang) || `Day ${index + 1}`;
+        html += `<button class="tab-button" data-tab="${lang}-list-${index}" data-view="list">${groupName}</button>`;
     });
+    html += '</div>';
+    html += '</div>';
+
+    // Schedule view tabs
+    html += '<div class="session-tab-group">';
+    html += `<div class="tab-group-title">${lang === 'ja' ? 'スケジュール表示' : 'Schedule View'}</div>`;
+    html += '<div class="tab-buttons">';
+    data.forEach((day, index) => {
+        const isActive = index === 0 ? 'active' : '';
+        const groupName = formatDate(day.date, lang) || `Day ${index + 1}`;
+        html += `<button class="tab-button ${isActive}" data-tab="${lang}-schedule-${index}" data-view="schedule">${groupName}</button>`;
+    });
+    html += '</div>';
+    html += '</div>';
+
     html += '</div>';
 
     // Create tab content
     html += '<div class="tab-contents">';
-    data.forEach((group, index) => {
-        const isActive = index === 0 ? 'active' : '';
-        html += `<div class="tab-content ${isActive}" id="${lang}-session-${index}">`;
-
-        if (group.sessions && group.sessions.length > 0) {
+    data.forEach((day, index) => {
+        if (day.timeSlots && day.timeSlots.length > 0) {
+            // List view tab content
+            html += `<div class="tab-content" id="${lang}-list-${index}">`;
             html += '<div class="sessions-list">';
-            group.sessions.forEach(session => {
-                html += createSessionCard(session, lang);
+            day.timeSlots.forEach(slot => {
+                if (slot.rooms) {
+                    slot.rooms.forEach(room => {
+                        if (room.session) {
+                            html += createSessionCard(room.session, lang, slot.slotStart);
+                        }
+                    });
+                }
             });
             html += '</div>';
+            html += '</div>';
+
+            // Schedule view tab content
+            const isActive = index === 0 ? 'active' : '';
+            html += `<div class="tab-content ${isActive}" id="${lang}-schedule-${index}">`;
+            html += '<div class="schedule-view">';
+            html += createScheduleView(day.timeSlots, lang);
+            html += '</div>';
+            html += '</div>';
         } else {
+            html += `<div class="tab-content" id="${lang}-list-${index}">`;
             html += lang === 'ja'
                 ? '<p>このカテゴリーにはまだセッションがありません。</p>'
                 : '<p>No sessions in this category yet.</p>';
-        }
+            html += '</div>';
 
-        html += '</div>';
+            const isActive = index === 0 ? 'active' : '';
+            html += `<div class="tab-content ${isActive}" id="${lang}-schedule-${index}">`;
+            html += lang === 'ja'
+                ? '<p>このカテゴリーにはまだセッションがありません。</p>'
+                : '<p>No sessions in this category yet.</p>';
+            html += '</div>';
+        }
     });
     html += '</div>';
 
@@ -127,21 +169,19 @@ function createSessionTabs(data, lang) {
     return html;
 }
 
-function createSessionCard(session, lang) {
+function createSessionCard(session, lang, timeSlot) {
     const title = session.title || (lang === 'ja' ? '未定' : 'TBD');
     const description = session.description || '';
     const speakers = session.speakers || [];
-    const categories = session.categories || [];
-    const startsAt = session.startsAt ? new Date(session.startsAt) : null;
-    const endsAt = session.endsAt ? new Date(session.endsAt) : null;
     const room = session.room || '';
 
     let card = '<div class="session-card">';
 
-    if (startsAt && endsAt) {
-        const timeStr = formatTime(startsAt, endsAt);
+    // Add time information
+    if (timeSlot) {
+        const jstTime = convertToJST(timeSlot);
         card += '<div class="session-time">';
-        card += `<span class="time">${timeStr}</span>`;
+        card += `<span class="time">${jstTime}</span>`;
         if (room) {
             card += ` <span class="room">${room}</span>`;
         }
@@ -154,18 +194,6 @@ function createSessionCard(session, lang) {
         card += '<div class="session-speakers">';
         speakers.forEach(speaker => {
             card += `<span class="speaker-name">${speaker.name}</span>`;
-        });
-        card += '</div>';
-    }
-
-    if (categories.length > 0) {
-        card += '<div class="session-tags">';
-        categories.forEach(category => {
-            if (category.categoryItems && category.categoryItems.length > 0) {
-                category.categoryItems.forEach(item => {
-                    card += `<span class="tag">${item.name}</span>`;
-                });
-            }
         });
         card += '</div>';
     }
@@ -257,6 +285,74 @@ function createSpeakerCard(speaker) {
     return card;
 }
 
+function createScheduleView(timeSlots, lang) {
+    // GridSmart API provides timeSlots array with rooms
+    if (!timeSlots || timeSlots.length === 0) {
+        return lang === 'ja' ? '<p>スケジュール情報がありません。</p>' : '<p>No schedule information available.</p>';
+    }
+
+    // Extract all unique rooms
+    const rooms = [];
+    timeSlots.forEach(slot => {
+        if (slot.rooms) {
+            slot.rooms.forEach(room => {
+                if (room.name && !rooms.includes(room.name)) {
+                    rooms.push(room.name);
+                }
+            });
+        }
+    });
+
+    let html = '<div class="timetable">';
+
+    // Header row
+    html += '<div class="timetable-header">';
+    html += `<div class="timetable-cell time-cell">${lang === 'ja' ? '時間' : 'Time'}</div>`;
+    rooms.forEach(roomName => {
+        html += `<div class="timetable-cell room-header">${roomName}</div>`;
+    });
+    html += '</div>';
+
+    // Time rows
+    timeSlots.forEach(slot => {
+        console.log('Original slotStart:', slot.slotStart); // Debug log
+        const slotTime = convertToJST(slot.slotStart) || '';
+        console.log('Converted to JST:', slotTime); // Debug log
+
+        html += '<div class="timetable-row">';
+        html += `<div class="timetable-cell time-cell">${slotTime}</div>`;
+
+        rooms.forEach(roomName => {
+            html += '<div class="timetable-cell session-cell">';
+
+            // Find sessions for this room
+            if (slot.rooms) {
+                const room = slot.rooms.find(r => r.name === roomName);
+                if (room && room.session) {
+                    const session = room.session;
+                    const title = session.title || (lang === 'ja' ? '未定' : 'TBD');
+                    const speakers = session.speakers || [];
+                    const speakerNames = speakers.map(s => s.name).join(', ');
+
+                    html += `<div class="schedule-session">`;
+                    html += `<div class="schedule-session-title">${title}</div>`;
+                    if (speakerNames) {
+                        html += `<div class="schedule-session-speaker">${speakerNames}</div>`;
+                    }
+                    html += '</div>';
+                }
+            }
+
+            html += '</div>';
+        });
+
+        html += '</div>';
+    });
+
+    html += '</div>';
+    return html;
+}
+
 function formatTime(startsAt, endsAt) {
     const startHours = startsAt.getHours().toString().padStart(2, '0');
     const startMinutes = startsAt.getMinutes().toString().padStart(2, '0');
@@ -264,6 +360,79 @@ function formatTime(startsAt, endsAt) {
     const endMinutes = endsAt.getMinutes().toString().padStart(2, '0');
 
     return `${startHours}:${startMinutes} - ${endHours}:${endMinutes}`;
+}
+
+function formatTimeSimple(date) {
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    return `${hours}:${minutes}`;
+}
+
+function formatDate(dateString, lang) {
+    if (!dateString) return '';
+
+    try {
+        const date = new Date(dateString);
+
+        if (lang === 'ja') {
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+            const weekday = weekdays[date.getDay()];
+            return `${month}月${day}日(${weekday})`;
+        } else {
+            const options = { month: 'short', day: 'numeric', weekday: 'short' };
+            return date.toLocaleDateString('en-US', options);
+        }
+    } catch (error) {
+        console.error('Error formatting date:', error, dateString);
+        return dateString;
+    }
+}
+
+function convertToJST(timeString) {
+    if (!timeString) return '';
+
+    try {
+        // Parse the time string
+        let utcHours, utcMinutes;
+
+        if (timeString.includes('T') || timeString.includes('Z')) {
+            // ISO format (e.g., "2025-10-12T01:00:00Z")
+            const date = new Date(timeString);
+            utcHours = date.getUTCHours();
+            utcMinutes = date.getUTCMinutes();
+        } else if (timeString.match(/^\d{2}:\d{2}:\d{2}$/)) {
+            // HH:mm:ss format - treat as UTC time
+            const [hours, minutes] = timeString.split(':').map(Number);
+            utcHours = hours;
+            utcMinutes = minutes;
+        } else if (timeString.match(/^\d{2}:\d{2}$/)) {
+            // HH:mm format - treat as UTC time
+            const [hours, minutes] = timeString.split(':').map(Number);
+            utcHours = hours;
+            utcMinutes = minutes;
+        } else {
+            return timeString;
+        }
+
+        // Convert to JST (UTC+9)
+        let jstHours = utcHours + 9;
+        const jstMinutes = utcMinutes;
+
+        // Handle day overflow
+        if (jstHours >= 24) {
+            jstHours = jstHours - 24;
+        }
+
+        const hours = jstHours.toString().padStart(2, '0');
+        const minutes = jstMinutes.toString().padStart(2, '0');
+
+        return `${hours}:${minutes}`;
+    } catch (error) {
+        console.error('Error converting to JST:', error, timeString);
+        return timeString;
+    }
 }
 
 function initializeMainTabs() {
@@ -305,19 +474,27 @@ function initializeSessionTabs() {
         button.addEventListener('click', function() {
             const tabId = this.getAttribute('data-tab');
             const tabContainer = this.closest('.session-tabs');
+            const viewType = this.getAttribute('data-view');
 
             if (!tabContainer) return;
 
-            tabContainer.querySelectorAll('.tab-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            // Only remove active class from buttons in the same view group
+            const tabGroup = this.closest('.session-tab-group');
+            if (tabGroup) {
+                tabGroup.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+            }
 
+            // Remove active class from all tab contents
             tabContainer.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
 
+            // Add active class to clicked button
             this.classList.add('active');
 
+            // Show corresponding tab content
             const targetContent = tabContainer.querySelector(`#${tabId}`);
             if (targetContent) {
                 targetContent.classList.add('active');

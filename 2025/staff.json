@@ -1,0 +1,92 @@
+{
+  "staff": [
+    {
+      "name": "sago35",
+      "name_en": "sago35",
+      "role": "主催者",
+      "role_en": "Organizer",
+      "avatar": "https://github.com/sago35.png",
+      "links": {
+        "twitter": "https://twitter.com/sago35tk",
+        "github": "https://github.com/sago35"
+      }
+    },
+    {
+      "name": "ysaito",
+      "name_en": "ysaito",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1943678201546362881/8b8-bbJq_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/ysaito8015",
+        "github": ""
+      }
+    },
+    {
+      "name": "taknb2nch",
+      "name_en": "taknb2nch",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/869314056/________120x120_reasonably_small.gif",
+      "links": {
+        "twitter": "https://twitter.com/taknb2nch",
+        "github": ""
+      }
+     
+    {
+      "name": "satoken",
+      "name_en": "satoken",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1120935948173234176/_BsyuTAi_400x400.png",
+      "links": {
+        "twitter": "https://twitter.com/ken5owata",
+        "github": ""
+      }
+    },
+    {
+      "name": "micchie",
+      "name_en": "micchie",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1835841824587759616/FOw7ffJ__400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/micchiebear",
+        "github": ""
+      }
+    },
+    {
+      "name":"MakKi",
+      "name_en":"MakKi",
+      "role":"スタッフ",
+      "role_en":"Staff",
+      "avatar":"https://pbs.twimg.com/profile_images/999215308/milk_400x400.jpg",
+      "links":{
+        "twitter":"https://twitter.com/makki_d",
+        "github":""
+      }
+    },
+    {
+      "name": "Takuto Nagami",
+      "name_en": "Takuto Nagami",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1935696113576636416/QpX0kWAO_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/logica0419",
+        "github": ""
+      }
+    },
+    {
+      "name": "Kizuku",
+      "name_en": "Kizuku",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1773157091991281664/eZ2xTL8t_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/Kizuku_tech",
+        "github": ""
+      }
+    }
+  ]
+}

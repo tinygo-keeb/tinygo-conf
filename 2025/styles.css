@@ -301,25 +301,88 @@ a:hover {
     display: inline-block;
     background-color: var(--secondary-color);
     color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
+    padding: 18px 40px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.2rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .button:hover {
     background-color: var(--primary-color);
     text-decoration: none;
     color: white;
-    transform: translateY(-2px); /* 少し浮き上がる効果 */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-3px); /* 少し浮き上がる効果 */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
 
 /* --- Map Section --- */
+.location-tabs {
+    margin-top: 2rem;
+}
+
+.location-tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.location-tab-button {
+    padding: 1rem 2rem;
+    background: #f0f0f0;
+    border: none;
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.location-tab-button:hover {
+    background: #e0e0e0;
+    color: var(--primary-color);
+}
+
+.location-tab-button.active {
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.location-tab-contents {
+    min-height: 400px;
+}
+
+.location-tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.location-tab-content.active {
+    display: block;
+}
+
+.venue-map {
+    margin: 30px auto;
+    text-align: center;
+    max-width: 700px;
+}
+
+.venue-map-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
 #location .map-container {
      position: relative;
      padding-bottom: 75%; /* 4:3 Aspect Ratio */
@@ -338,10 +401,21 @@ a:hover {
      border: 0;
 }
 
+@media (max-width: 768px) {
+    .location-tab-buttons {
+        flex-direction: column;
+    }
+
+    .location-tab-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* --- Sponsors Section --- */
 .sponsors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 30px;
     align-items: center;
@@ -393,10 +467,10 @@ a:hover {
 
 @media (max-width: 768px) {
     .sponsors-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .sponsor-item {
         max-width: 200px;
         padding: 15px;
@@ -552,35 +626,54 @@ a:hover {
     margin-top: 1rem;
 }
 
+.main-session-tabs {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.session-tab-group {
+    flex: 1;
+}
+
+.tab-group-title {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
 .tab-buttons {
     display: flex;
     gap: 0.5rem;
-    border-bottom: 2px solid #e0e0e0;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     flex-wrap: wrap;
 }
 
 .tab-button {
-    padding: 0.75rem 1.5rem;
-    background: none;
-    border: none;
+    padding: 0.6rem 1.2rem;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
     color: #666;
-    font-size: 1rem;
+    font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.3s;
-    border-bottom: 3px solid transparent;
-    margin-bottom: -2px;
+    border-radius: 4px;
 }
 
 .tab-button:hover {
+    background: #e0e0e0;
     color: var(--primary-color);
-    background: rgba(0, 80, 158, 0.05);
+    border-color: var(--primary-color);
 }
 
 .tab-button.active {
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
     font-weight: bold;
-    border-bottom-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .tab-contents {
@@ -674,14 +767,101 @@ a:hover {
     margin-top: 1rem;
 }
 
+/* --- Timetable Schedule View --- */
+.timetable {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.timetable-header {
+    display: grid;
+    grid-template-columns: 100px repeat(auto-fit, minmax(200px, 1fr));
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.timetable-row {
+    display: grid;
+    grid-template-columns: 100px repeat(auto-fit, minmax(200px, 1fr));
+    border-top: 1px solid #e0e0e0;
+}
+
+.timetable-cell {
+    padding: 1rem;
+    border-right: 1px solid #e0e0e0;
+}
+
+.timetable-cell:last-child {
+    border-right: none;
+}
+
+.time-cell {
+    font-weight: bold;
+    color: var(--primary-color);
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.room-header {
+    text-align: center;
+    padding: 0.75rem;
+}
+
+.session-cell {
+    background: white;
+    padding: 0.5rem;
+}
+
+.schedule-session {
+    background: #f8f9fa;
+    border-left: 3px solid var(--primary-color);
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-session:last-child {
+    margin-bottom: 0;
+}
+
+.schedule-session-title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.schedule-session-speaker {
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.schedule-session-time {
+    color: #666;
+    font-size: 0.8rem;
+}
+
 @media (max-width: 768px) {
+    .main-session-tabs {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
     .tab-buttons {
         flex-direction: column;
     }
 
     .tab-button {
         width: 100%;
-        text-align: left;
+        text-align: center;
     }
 
     .session-card {
@@ -691,13 +871,22 @@ a:hover {
     .session-title {
         font-size: 1.1rem;
     }
+
+    .timetable-header,
+    .timetable-row {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .schedule-session-title {
+        font-size: 0.85rem;
+    }
 }
 
 /* --- Staff Cards --- */
 .staff-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
@@ -705,7 +894,7 @@ a:hover {
     background: var(--card-bg-color);
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 1.5rem;
+    padding: 1.2rem;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -715,12 +904,21 @@ a:hover {
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
+.staff-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 0.8rem;
+    border: 3px solid var(--primary-color);
+}
+
 .staff-photo-placeholder {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: linear-gradient(135deg, #00509e 0%, #007bff 100%);
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.8rem;
     display: flex;
     align-items: center;
     justify-content: center;

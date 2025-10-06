@@ -193,7 +193,12 @@ function createSessionCard(session, lang, timeSlot) {
     if (speakers.length > 0) {
         card += '<div class="session-speakers">';
         speakers.forEach(speaker => {
-            card += `<span class="speaker-name">${speaker.name}</span>`;
+            let speakerName = speaker.screenName || speaker.name || 'Unknown';
+            // Custom name mappings
+            if (speaker.name === 'Daichi Ujimoto' || speaker.fullName === 'Daichi Ujimoto') {
+                speakerName = 'uji';
+            }
+            card += `<span class="speaker-name">${speakerName}</span>`;
         });
         card += '</div>';
     }
@@ -210,7 +215,13 @@ function createSessionCard(session, lang, timeSlot) {
 }
 
 function createSpeakerCard(speaker) {
-    const name = speaker.fullName || 'Unknown Speaker';
+    let name = speaker.screenName || speaker.fullName || 'Unknown Speaker';
+
+    // Custom name mappings
+    if (speaker.fullName === 'Daichi Ujimoto') {
+        name = 'uji';
+    }
+
     const tagline = speaker.tagLine || '';
     const bio = speaker.bio || '';
     const profilePic = speaker.profilePicture || '';
@@ -344,7 +355,14 @@ function createScheduleView(timeSlots, lang) {
                     const session = room.session;
                     const title = session.title || (lang === 'ja' ? '未定' : 'TBD');
                     const speakers = session.speakers || [];
-                    const speakerNames = speakers.map(s => s.name).join(', ');
+                    const speakerNames = speakers.map(s => {
+                        let name = s.screenName || s.name || 'Unknown';
+                        // Custom name mappings
+                        if (s.name === 'Daichi Ujimoto' || s.fullName === 'Daichi Ujimoto') {
+                            name = 'uji';
+                        }
+                        return name;
+                    }).join(', ');
 
                     html += `<div class="schedule-session">`;
                     html += `<div class="schedule-session-title">${title}</div>`;

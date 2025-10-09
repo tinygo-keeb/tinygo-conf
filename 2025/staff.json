@@ -23,24 +23,13 @@
       }
     },
     {
-      "name": "taknb2nch",
-      "name_en": "taknb2nch",
+      "name": "Senoue",
+      "name_en": "Senoue",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/869314056/________120x120_reasonably_small.gif",
+      "avatar": "https://pbs.twimg.com/profile_images/1951452891304345600/HWCkBlFE_400x400.jpg",
       "links": {
-        "twitter": "https://twitter.com/taknb2nch",
-        "github": ""
-      }
-    },
-    {
-      "name": "satoken",
-      "name_en": "satoken",
-      "role": "スタッフ",
-      "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1120935948173234176/_BsyuTAi_400x400.png",
-      "links": {
-        "twitter": "https://twitter.com/ken5owata",
+        "twitter": "https://twitter.com/senoue",
         "github": ""
       }
     },
@@ -56,6 +45,28 @@
       }
     },
     {
+      "name": "satoken",
+      "name_en": "satoken",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1120935948173234176/_BsyuTAi_400x400.png",
+      "links": {
+        "twitter": "https://twitter.com/ken5owata",
+        "github": ""
+      }
+    },
+    {
+      "name": "taknb2nch",
+      "name_en": "taknb2nch",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1976153504399187968/dTPS5Umk_400x400.png",
+      "links": {
+        "twitter": "https://twitter.com/taknb2nch",
+        "github": ""
+      }
+    },
+    {
       "name":"MakKi",
       "name_en":"MakKi",
       "role":"スタッフ",
@@ -64,6 +75,17 @@
       "links":{
         "twitter":"https://twitter.com/makki_d",
         "github":""
+      }
+    },
+    {
+      "name": "Tam",
+      "name_en": "Tam",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1962452384338386944/At18HrK__400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/tam_x",
+        "github": ""
       }
     },
     {
@@ -85,6 +107,83 @@
       "avatar": "https://pbs.twimg.com/profile_images/1773157091991281664/eZ2xTL8t_400x400.jpg",
       "links": {
         "twitter": "https://twitter.com/Kizuku_tech",
+        "github": ""
+      }
+    },
+    {
+      "name": "mom0tomo",
+      "name_en": "mom0tomo",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1496146482961215492/WyHmWjxc_400x400.png",
+      "links": {
+        "twitter": "https://twitter.com/mom0tomo",
+        "github": ""
+      }
+    },
+    {
+      "name": "Gunzi",
+      "name_en": "Gunzi",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1321379166332178433/Pqx9MiNH_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/com_gunzi",
+        "github": ""
+      }
+    },
+    {
+      "name": "haruyama",
+      "name_en": "haruyama",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1933150342755299328/lob5ybHw_400x400.png",
+      "links": {
+        "twitter": "https://twitter.com/haruyama480",
+        "github": ""
+      }
+    },
+    {
+      "name": "Rinrin",
+      "name_en": "Rinrin",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1726593907914645504/LSY8PhIe_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/Yuukih52144351",
+        "github": ""
+      }
+    },
+    {
+      "name": "KojiKa",
+      "name_en": "KojiKa",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1907558735230451712/1KqnUIl7_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/_ko2ka_",
+        "github": ""
+      }
+    },
+    {
+      "name": "hutoboshi",
+      "name_en": "hutoboshi",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1964546821449265152/2M5vlXjU_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/hutoccho_boshi",
+        "github": ""
+      }
+    },
+    {
+      "name": "misato",
+      "name_en": "misato",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1827348356466929665/sHkHfu_l_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/mikkegt",
         "github": ""
       }
     }

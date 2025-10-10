@@ -186,6 +186,17 @@
         "twitter": "https://twitter.com/mikkegt",
         "github": ""
       }
+    },
+    {
+      "name": "ばばしお",
+      "name_en": "ばばしお",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1858909016283639809/P7uyC2xI_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/tokyo_887",
+        "github": ""
+      }
     }
   ]
 }

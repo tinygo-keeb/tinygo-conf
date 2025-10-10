@@ -1,8 +1,8 @@
 {
   "staff": [
     {
-      "name": "sago35",
-      "name_en": "sago35",
+      "name": "さご",
+      "name_en": "さご",
       "role": "主催者",
       "role_en": "Organizer",
       "avatar": "https://github.com/sago35.png",
@@ -111,8 +111,8 @@
       }
     },
     {
-      "name": "mom0tomo",
-      "name_en": "mom0tomo",
+      "name": "Momo",
+      "name_en": "Momo",
       "role": "スタッフ",
       "role_en": "Staff",
       "avatar": "https://pbs.twimg.com/profile_images/1496146482961215492/WyHmWjxc_400x400.png",
@@ -177,13 +177,24 @@
       }
     },
     {
-      "name": "misato",
-      "name_en": "misato",
+      "name": "Misato",
+      "name_en": "Misato",
       "role": "スタッフ",
       "role_en": "Staff",
       "avatar": "https://pbs.twimg.com/profile_images/1827348356466929665/sHkHfu_l_400x400.jpg",
       "links": {
         "twitter": "https://twitter.com/mikkegt",
+        "github": ""
+      }
+    },
+    {
+      "name": "ばばしお",
+      "name_en": "ばばしお",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "https://pbs.twimg.com/profile_images/1858909016283639809/P7uyC2xI_400x400.jpg",
+      "links": {
+        "twitter": "https://twitter.com/tokyo_887",
         "github": ""
       }
     }

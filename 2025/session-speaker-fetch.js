@@ -63,14 +63,66 @@ async function fetchSpeakers() {
 
         const speakers = await response.json();
 
-        if (!speakers || speakers.length === 0) {
+        // Add local speakers
+        const localSpeakers = [
+            {
+                "id": "sago35",
+                "fullName": "sago35",
+                "screenName": "sago35",
+                "tagLine": "",
+                "bio": "",
+                "profilePicture": "https://github.com/sago35.png",
+                "links": [
+                    {
+                        "linkType": "Twitter",
+                        "url": "https://x.com/sago35tk"
+                    }
+                ],
+                "sessions": []
+            },
+            {
+                "id": "micchie",
+                "fullName": "micchie",
+                "screenName": "micchie",
+                "tagLine": "",
+                "bio": "",
+                "profilePicture": "https://pbs.twimg.com/profile_images/1835841824587759616/FOw7ffJ__400x400.jpg",
+                "links": [
+                    {
+                        "linkType": "Twitter",
+                        "url": "https://x.com/micchiebear"
+                    }
+                ],
+                "sessions": []
+            },
+            {
+                "id": "senoue",
+                "fullName": "senoue",
+                "screenName": "senoue",
+                "tagLine": "",
+                "bio": "",
+                "profilePicture": "https://pbs.twimg.com/profile_images/1951452891304345600/HWCkBlFE_400x400.jpg",
+                "links": [
+                    {
+                        "linkType": "Twitter",
+                        "url": "https://x.com/senoue"
+                    }
+                ],
+                "sessions": []
+            }
+        ];
+
+        // Combine API speakers and local speakers
+        const allSpeakers = speakers.concat(localSpeakers);
+
+        if (!allSpeakers || allSpeakers.length === 0) {
             speakerContainerJa.innerHTML = '<p>登壇者情報は近日公開予定です。</p>';
             speakerContainerEn.innerHTML = '<p>Speaker information will be announced soon.</p>';
         } else {
             let speakersHtmlJa = '<div class="speakers-grid">';
             let speakersHtmlEn = '<div class="speakers-grid">';
 
-            speakers.forEach(speaker => {
+            allSpeakers.forEach(speaker => {
                 const speakerCard = createSpeakerCard(speaker);
                 speakersHtmlJa += speakerCard;
                 speakersHtmlEn += speakerCard;

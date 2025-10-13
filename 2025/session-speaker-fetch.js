@@ -66,6 +66,21 @@ async function fetchSpeakers() {
         // Add local speakers
         const localSpeakers = [
             {
+                "id": "nobonobo",
+                "fullName": "nobonobo",
+                "screenName": "nobonobo",
+                "tagLine": "",
+                "bio": "",
+                "profilePicture": "https://github.com/nobonobo.png",
+                "links": [
+                    {
+                        "linkType": "Twitter",
+                        "url": "https://x.com/nobonobo"
+                    }
+                ],
+                "sessions": []
+            },
+            {
                 "id": "sago35",
                 "fullName": "sago35",
                 "screenName": "sago35",

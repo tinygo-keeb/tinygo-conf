@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyGo Conference 2026</title>
+
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+
+    <meta property="og:title" content="TinyGo Conference 2026">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://conf.tinygo-keeb.org/2026/">
+    <meta property="og:image" content="https://conf.tinygo-keeb.org/2026/images/ogp.png">
+    <meta property="og:site_name" content="TinyGo Conference 2026">
+    <meta property="og:description" content="TinyGo Conference 2026 — 2026.10.11 (Sun) @ AP秋葉原">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tinygoconf">
+    <meta name="twitter:title" content="TinyGo Conference 2026">
+    <meta name="twitter:description" content="TinyGo Conference 2026 — 2026.10.11 (Sun) @ AP秋葉原">
+    <meta name="twitter:image" content="https://conf.tinygo-keeb.org/2026/images/ogp.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0e1a;
+            --bg-grad: radial-gradient(ellipse at top, #1a2342 0%, #0a0e1a 60%);
+            --fg: #e8ecf5;
+            --fg-dim: #8a93a8;
+            --accent: #00b4d8;
+            --accent-soft: rgba(0, 180, 216, 0.15);
+            --line: rgba(255, 255, 255, 0.08);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            background: var(--bg);
+            background-image: var(--bg-grad);
+            color: var(--fg);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background-image:
+                linear-gradient(var(--line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--line) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .page { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-bottom: 48px;
+        }
+        .logo { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; color: var(--fg); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .lang-switch { display: flex; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+        .lang-btn {
+            background: transparent; border: 1px solid var(--line); color: var(--fg-dim);
+            padding: 6px 12px; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: inherit;
+            transition: all 0.15s;
+        }
+        .lang-btn:hover { color: var(--fg); border-color: var(--fg-dim); }
+        .lang-btn.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+        .hero { padding: 80px 0 96px; }
+        .eyebrow {
+            font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em;
+            color: var(--accent); text-transform: uppercase; margin-bottom: 24px;
+        }
+        h1 {
+            font-size: clamp(48px, 9vw, 96px);
+            font-weight: 700; line-height: 1.05; letter-spacing: -0.03em;
+            margin-bottom: 32px;
+        }
+        h1 .year { display: block; color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 0.6em; letter-spacing: 0; margin-top: 8px; }
+        .tagline { font-size: clamp(16px, 2vw, 20px); color: var(--fg-dim); max-width: 540px; font-weight: 300; }
+
+        .info-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1px; background: var(--line);
+            border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+            margin-bottom: 48px;
+        }
+        .info-cell { background: rgba(10, 14, 26, 0.6); padding: 28px 24px; }
+        .info-label {
+            font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em;
+            color: var(--fg-dim); text-transform: uppercase; margin-bottom: 12px;
+        }
+        .info-value { font-size: 20px; font-weight: 500; line-height: 1.3; }
+        .info-sub { font-size: 13px; color: var(--fg-dim); margin-top: 6px; font-family: 'JetBrains Mono', monospace; }
+
+        .map-wrap {
+            border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+            aspect-ratio: 16 / 9; background: #000; margin-bottom: 48px;
+        }
+        .map-wrap iframe { width: 100%; height: 100%; border: 0; filter: invert(0.9) hue-rotate(180deg) saturate(0.6); }
+
+        .status {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--fg-dim);
+            padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px;
+        }
+        .status::before {
+            content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+            box-shadow: 0 0 0 0 var(--accent); animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 180, 216, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
+        }
+
+        footer {
+            margin-top: 96px; padding-top: 32px; border-top: 1px solid var(--line);
+            display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px;
+            font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--fg-dim);
+        }
+        footer a { color: var(--fg-dim); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
+        footer a:hover { border-bottom-color: var(--fg-dim); }
+        footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+        [lang="ja"] .lang-en, [lang="en"] .lang-ja { display: none; }
+
+        @media (max-width: 600px) {
+            .page { padding: 24px 20px 48px; }
+            header { padding-bottom: 32px; }
+            .hero { padding: 48px 0 64px; }
+            .info-cell { padding: 22px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <a href="#" class="logo">TinyGo Conf<span>/</span>2026</a>
+            <div class="lang-switch">
+                <button class="lang-btn" data-lang="ja">JA</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="eyebrow">
+                <span class="lang-ja">開催決定</span>
+                <span class="lang-en">Save the date</span>
+            </div>
+            <h1>
+                TinyGo Conference
+                <span class="year">/ 2026</span>
+            </h1>
+            <p class="tagline">
+                <span class="lang-ja">小さくても強力な Go の世界へ、ふたたび。</span>
+                <span class="lang-en">Back to the world of small but powerful Go.</span>
+            </p>
+        </section>
+
+        <div class="info-grid">
+            <div class="info-cell">
+                <div class="info-label">
+                    <span class="lang-ja">開催日</span>
+                    <span class="lang-en">Date</span>
+                </div>
+                <div class="info-value">
+                    <span class="lang-ja">2026年10月11日（日）</span>
+                    <span class="lang-en">Sunday, October 11, 2026</span>
+                </div>
+                <div class="info-sub">2026.10.11 SUN</div>
+            </div>
+            <div class="info-cell">
+                <div class="info-label">
+                    <span class="lang-ja">会場</span>
+                    <span class="lang-en">Venue</span>
+                </div>
+                <div class="info-value">
+                    <span class="lang-ja">AP秋葉原 5F Room-C</span>
+                    <span class="lang-en">AP Akihabara 5F Room-C</span>
+                </div>
+                <div class="info-sub">
+                    <span class="lang-ja">〒110-0006 東京都台東区秋葉原1-1</span>
+                    <span class="lang-en">1-1 Akihabara, Taito-ku, Tokyo</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9937963780667!2d139.77273707652478!3d35.701770272580696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ea7032a0ddf%3A0xd8dc34de4c87d6ad!2zQVDnp4vokYnljp8!5e0!3m2!1sja!2sjp!4v1745832689769!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="status">
+            <span class="lang-ja">セッション・登壇者・スポンサー情報は近日公開</span>
+            <span class="lang-en">Sessions, speakers & sponsors — coming soon</span>
+        </div>
+
+        <footer>
+            <div>
+                <span class="lang-ja">&copy; 2026 TinyGo Conf Team — 協賛: Gophers Japan</span>
+                <span class="lang-en">&copy; 2026 TinyGo Conf Team — Sponsored by Gophers Japan</span>
+            </div>
+            <div class="links">
+                <a href="https://go.dev/conduct" target="_blank">
+                    <span class="lang-ja">行動規範</span>
+                    <span class="lang-en">Code of Conduct</span>
+                </a>
+                <a href="policy/anti-harassment.html">
+                    <span class="lang-ja">アンチハラスメント</span>
+                    <span class="lang-en">Anti-Harassment</span>
+                </a>
+                <a href="https://x.com/tinygo_keeb" target="_blank">
+                    <span class="lang-ja">お問い合わせ</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+<script>
+    function setLanguage(lang) {
+        document.documentElement.setAttribute('lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        localStorage.setItem('preferredLanguage', lang);
+    }
+    const saved = localStorage.getItem('preferredLanguage');
+    const initial = saved || ((navigator.language || 'en').startsWith('ja') ? 'ja' : 'en');
+    setLanguage(initial);
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+    });
+</script>
+</body>
+</html>

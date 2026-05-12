@@ -3,50 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TinyGoカンファレンス - リダイレクト</title>
-  <meta http-equiv="refresh" content="0;URL='https://conf.tinygo-keeb.org'" />
+  <title>TinyGo Conference — Redirecting</title>
+  <meta name="description" content="TinyGo Conference 2026 — 2026.10.11 (Sun) @ AP秋葉原">
+  <meta property="og:title" content="TinyGo Conference 2026">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://conf.tinygo-keeb.org/">
+  <meta property="og:image" content="https://conf.tinygo-keeb.org/2026/images/ogp.png">
+  <meta property="og:site_name" content="TinyGo Conference 2026">
+  <meta property="og:description" content="TinyGo Conference 2026 — 2026.10.11 (Sun) @ AP秋葉原">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tinygoconf">
+  <meta name="twitter:title" content="TinyGo Conference 2026">
+  <meta name="twitter:description" content="TinyGo Conference 2026 — 2026.10.11 (Sun) @ AP秋葉原">
+  <meta name="twitter:image" content="https://conf.tinygo-keeb.org/2026/images/ogp.png">
+  <meta http-equiv="refresh" content="0;URL='https://conf.tinygo-keeb.org/2026'" />
   <script src="redirect.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0a0e1a;
+      --bg-grad: radial-gradient(ellipse at top, #1a2342 0%, #0a0e1a 60%);
+      --fg: #e8ecf5;
+      --fg-dim: #8a93a8;
+      --accent: #00b4d8;
+      --accent-soft: rgba(0, 180, 216, 0.15);
+      --line: rgba(255, 255, 255, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      background: var(--bg);
+      background-image: var(--bg-grad);
+      color: var(--fg);
       line-height: 1.6;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .card {
+      position: relative; z-index: 1;
+      max-width: 520px; width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(10, 14, 26, 0.6);
+      padding: 40px 32px;
       text-align: center;
     }
-    .message {
+    .logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700; font-size: 14px; letter-spacing: 0.08em;
+      color: var(--fg); margin-bottom: 24px;
+    }
+    .logo span { color: var(--accent); }
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
       margin-bottom: 20px;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
     }
-    .en {
-      margin-bottom: 20px;
+    h1 .year {
+      display: block; color: var(--accent);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.5em;
+      letter-spacing: 0; margin-top: 6px;
     }
-    .ja {
-      margin-bottom: 20px;
+    p { color: var(--fg-dim); font-weight: 300; margin-bottom: 12px; }
+    a.cta {
+      display: inline-block; margin-top: 16px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px;
+      color: var(--accent); text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid var(--accent); border-radius: 999px;
+      background: var(--accent-soft);
+      transition: all 0.15s;
     }
-    a {
-      color: #0366d6;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+    a.cta:hover { background: var(--accent); color: var(--bg); }
+    .divider {
+      height: 1px; background: var(--line);
+      margin: 24px 0;
     }
   </style>
 </head>
 <body>
-  <div class="message">
-    <div class="en">
-      <h2>TinyGo Conference</h2>
-      <p>Redirecting to the TinyGo Conference website. If you are not automatically redirected, please <a href="https://conf.tinygo-keeb.org/2025">click here</a>.</p>
-    </div>
-    <hr>
-    <div class="ja">
-      <h2>TinyGoカンファレンス</h2>
-      <p>TinyGoカンファレンスページに移動します。自動的にリダイレクトされない場合は<a href="https://conf.tinygo-keeb.org/2025">こちら</a>をクリックしてください。</p>
-    </div>
+  <div class="card">
+    <div class="logo">TinyGo Conf<span>/</span>2026</div>
+    <div class="eyebrow">Redirecting</div>
+    <h1>
+      TinyGo Conference
+      <span class="year">/ 2026</span>
+    </h1>
+    <p>TinyGoカンファレンスページに移動します。</p>
+    <p>Redirecting to the TinyGo Conference website.</p>
+    <a class="cta" href="https://conf.tinygo-keeb.org/2026">Go to 2026 site →</a>
+    <div class="divider"></div>
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px;">2026.10.11 SUN @ AP秋葉原</p>
   </div>
 </body>
 </html>

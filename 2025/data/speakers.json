@@ -1,0 +1,56 @@
+[
+  {
+    "id": "88343236-2ac4-4d4f-af68-865442fb14ce",
+    "firstName": "Daichi",
+    "lastName": "Ujimoto",
+    "fullName": "Daichi Ujimoto",
+    "tagLine": "NOT A HOTEL株式会社",
+    "profilePicture": "images/speakers/485b-400o400o1-PgPv7EW47xwAY38gj69NSt.jpg",
+    "isTopSpeaker": false
+  },
+  {
+    "id": "d8195839-eecc-4adc-840c-2508e607b3ae",
+    "firstName": "Keisuke",
+    "lastName": "Nakamura",
+    "fullName": "Keisuke Nakamura",
+    "tagLine": "DMM.com,エンジニア",
+    "profilePicture": "images/speakers/2004-400o400o1-9EDBGHEk7aFbKaWiLs9xW7.png",
+    "isTopSpeaker": false
+  },
+  {
+    "id": "a5f2fdf2-4459-4f50-982e-686d4e9832aa",
+    "firstName": "Asuka",
+    "lastName": "Yagi",
+    "fullName": "Asuka Yagi",
+    "tagLine": "株式会社モニクル",
+    "profilePicture": "images/speakers/496a-400o400o1-RwVgnKXw5yunuWcDFZ9vko.png",
+    "isTopSpeaker": false
+  },
+  {
+    "id": "6124b59e-e3bd-4396-877b-d2adcf2771c2",
+    "firstName": "Daniel",
+    "lastName": "Esteban",
+    "fullName": "Daniel Esteban",
+    "tagLine": "Bunny lover and full time procrastinator.",
+    "profilePicture": "images/speakers/47b2-400o400o1-YDKGyD2VKiqWnXNriD6Rvw.png",
+    "isTopSpeaker": false
+  },
+  {
+    "id": "51bca77b-9883-4cf7-bd7b-1b14a27b8ba7",
+    "firstName": "You",
+    "lastName": "Kitano",
+    "fullName": "You Kitano",
+    "tagLine": "ITエンジニア / OSSコントリビューター",
+    "profilePicture": "images/speakers/cfae-400o400o1-BPT9DEAPAsYCN8NsiwTwvU.png",
+    "isTopSpeaker": false
+  },
+  {
+    "id": "78811c9f-16c2-4f37-b175-29072933df14",
+    "firstName": "Kotaro",
+    "lastName": "Otaka",
+    "fullName": "Kotaro Otaka",
+    "tagLine": "株式会社ビットキー 開発エンジニア",
+    "profilePicture": "images/speakers/ba25-400o400o1-YNB9pZ2ZGvQgLndrxrr6rv.png",
+    "isTopSpeaker": false
+  }
+]

@@ -1,6 +1,7 @@
-// Combined session and speaker fetch script
-const SESSION_API_URL = 'https://sessionize.com/api/v2/y2g3or7x/view/GridSmart';
-const SPEAKER_API_URL = 'https://sessionize.com/api/v2/y2g3or7x/view/SpeakerWall';
+// Combined session and speaker fetch script - Using locally archived Sessionize data
+// (snapshots of https://sessionize.com/api/v2/y2g3or7x/view/GridSmart and .../SpeakerWall)
+const SESSION_API_URL = 'data/sessions.json';
+const SPEAKER_API_URL = 'data/speakers.json';
 
 async function fetchSessionsAndSpeakers() {
     // Fetch both sessions and speakers

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>TinyGo Keeblog</title>
+	<atom:link href="https://tinygo-keeb.org/blog/?feed=rss2" rel="self" type="application/rss+xml" />
+	<link>https://tinygo-keeb.org/blog</link>
+	<lastBuildDate>Tue, 14 Oct 2025 00:00:00 +0000</lastBuildDate>
+	<language>ja</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0.4</generator>
+
+<image>
+	<url>https://tinygo-keeb.org/blog/wp-content/uploads/2025/09/cropped-favicon-32x32-1-32x32.png</url>
+	<title>TinyGo Keeblog</title>
+	<link>https://tinygo-keeb.org/blog</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>TinyGo Conference 2025 in JAPAN を開催しました</title>
+		<link>https://tinygo-keeb.org/blog/?p=102</link>
+		
+		<dc:creator><![CDATA[sago35]]></dc:creator>
+		<pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+				<category><![CDATA[TinyGo Conference 2025 in JAPAN]]></category>
+		<category><![CDATA[TinyGo Keeb Tour]]></category>
+		<guid isPermaLink="false">https://tinygo-keeb.org/blog/?p=102</guid>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	<item>
+		<title>ワークショップ紹介④ Gopher ARCADE を作成しよう</title>
+		<link>https://tinygo-keeb.org/blog/?p=96</link>
+		
+		<dc:creator><![CDATA[sago35]]></dc:creator>
+		<pubDate>Fri, 10 Oct 2025 10:42:58 +0000</pubDate>
+				<category><![CDATA[TinyGo Conference 2025 in JAPAN]]></category>
+		<guid isPermaLink="false">https://tinygo-keeb.org/blog/?p=96</guid>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	<item>
+		<title>展示の紹介① : ハンドルコントローラー</title>
+		<link>https://tinygo-keeb.org/blog/?p=86</link>
+		
+		<dc:creator><![CDATA[sago35]]></dc:creator>
+		<pubDate>Sat, 04 Oct 2025 01:51:18 +0000</pubDate>
+				<category><![CDATA[TinyGo Conference 2025 in JAPAN]]></category>
+		<guid isPermaLink="false">https://tinygo-keeb.org/blog/?p=86</guid>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	<item>
+		<title>ワークショップ紹介③ conf2025badge を作成しよう</title>
+		<link>https://tinygo-keeb.org/blog/?p=70</link>
+		
+		<dc:creator><![CDATA[sago35]]></dc:creator>
+		<pubDate>Tue, 23 Sep 2025 22:48:07 +0000</pubDate>
+				<category><![CDATA[TinyGo Conference 2025 in JAPAN]]></category>
+		<guid isPermaLink="false">https://tinygo-keeb.org/blog/?p=70</guid>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	<item>
+		<title>TinyGo Conference 2025 で使用する名札</title>
+		<link>https://tinygo-keeb.org/blog/?p=66</link>
+		
+		<dc:creator><![CDATA[sago35]]></dc:creator>
+		<pubDate>Mon, 22 Sep 2025 00:51:36 +0000</pubDate>
+				<category><![CDATA[TinyGo Conference 2025 in JAPAN]]></category>
+		<guid isPermaLink="false">https://tinygo-keeb.org/blog/?p=66</guid>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	<item>
+		<title>ワークショップ紹介② キーキャップにおしゃれをさせてあげよう！</title>
+		<link>https://tinygo-keeb.org/blog/?p=32</link>
+		
+		<dc:creator><![CDATA[micchie]]></dc:creator>
+		<pubDate>Wed, 17 Sep 2025 13:59:14 +0000</pubDate>
+				<category><![CDATA[TinyGo Conference 2025 in JAPAN]]></category>
+		<category><![CDATA[TinyGo Keeb Tour]]></category>
+		<guid isPermaLink="false">https://tinygo-keeb.org/blog/?p=32</guid>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	<item>
+		<title>ワークショップ紹介① gopher‑board‑workshop</title>
+		<link>https://tinygo-keeb.org/blog/?p=14</link>
+		
+		<dc:creator><![CDATA[satoken]]></dc:creator>
+		<pubDate>Sat, 30 Aug 2025 23:23:26 +0000</pubDate>
+				<category><![CDATA[Go Conference 2025]]></category>
+		<category><![CDATA[TinyGo Conference 2025 in JAPAN]]></category>
+		<category><![CDATA[TinyGo Keeb Tour]]></category>
+		<guid isPermaLink="false">https://tinygo-keeb.org/blog/?p=14</guid>
+					
+		
+		
+			</item>
+	<item>
+		<title>TinyGo Conference 2025 in JAPAN を開催します</title>
+		<link>https://tinygo-keeb.org/blog/?p=7</link>
+		
+		<dc:creator><![CDATA[sago35]]></dc:creator>
+		<pubDate>Mon, 18 Aug 2025 23:18:43 +0000</pubDate>
+				<category><![CDATA[TinyGo Conference 2025 in JAPAN]]></category>
+		<guid isPermaLink="false">https://tinygo-keeb.org/blog/?p=7</guid>
+					
+		
+		
+			</item>
+</channel>
+</rss>

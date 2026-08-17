@@ -71,7 +71,7 @@ async function fetchSpeakers() {
                 "screenName": "nobonobo",
                 "tagLine": "",
                 "bio": "",
-                "profilePicture": "https://github.com/nobonobo.png",
+                "profilePicture": "images/avatars/nobonobo.png",
                 "links": [
                     {
                         "linkType": "Twitter",
@@ -86,7 +86,7 @@ async function fetchSpeakers() {
                 "screenName": "sago35",
                 "tagLine": "",
                 "bio": "",
-                "profilePicture": "https://github.com/sago35.png",
+                "profilePicture": "images/avatars/sago35tk.png",
                 "links": [
                     {
                         "linkType": "Twitter",
@@ -101,7 +101,7 @@ async function fetchSpeakers() {
                 "screenName": "micchie",
                 "tagLine": "",
                 "bio": "",
-                "profilePicture": "https://pbs.twimg.com/profile_images/1835841824587759616/FOw7ffJ__400x400.jpg",
+                "profilePicture": "images/avatars/micchiebear.jpg",
                 "links": [
                     {
                         "linkType": "Twitter",
@@ -116,7 +116,7 @@ async function fetchSpeakers() {
                 "screenName": "senoue",
                 "tagLine": "",
                 "bio": "",
-                "profilePicture": "https://pbs.twimg.com/profile_images/1951452891304345600/HWCkBlFE_400x400.jpg",
+                "profilePicture": "images/avatars/senoue.jpg",
                 "links": [
                     {
                         "linkType": "Twitter",

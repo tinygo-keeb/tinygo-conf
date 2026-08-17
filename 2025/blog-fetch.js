@@ -1,6 +1,6 @@
-// WordPress blog fetch script - Using CORS proxy
-const RSS_FEED_URL = 'https://tinygo-keeb.org/blog/?feed=rss2';
-const CORS_PROXY = 'https://corsproxy.io/?';
+// WordPress blog fetch script - Using locally archived RSS feed
+// (snapshot of https://tinygo-keeb.org/blog/?feed=rss2)
+const RSS_FEED_URL = 'data/blog-feed.xml';
 
 async function fetchBlogPosts() {
     const blogSectionJa = document.querySelector('#participation .lang-ja');
@@ -16,8 +16,8 @@ async function fetchBlogPosts() {
     blogSectionEn.innerHTML = '<h2>Blog</h2>' + loadingHtmlEn;
 
     try {
-        // Fetch RSS feed via CORS proxy
-        const response = await fetch(CORS_PROXY + encodeURIComponent(RSS_FEED_URL));
+        // Fetch locally archived RSS feed
+        const response = await fetch(RSS_FEED_URL);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

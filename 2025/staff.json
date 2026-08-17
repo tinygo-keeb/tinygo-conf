@@ -5,7 +5,7 @@
       "name_en": "さご",
       "role": "主催者",
       "role_en": "Organizer",
-      "avatar": "https://github.com/sago35.png",
+      "avatar": "images/avatars/sago35tk.png",
       "links": {
         "twitter": "https://twitter.com/sago35tk",
         "github": "https://github.com/sago35"
@@ -16,7 +16,7 @@
       "name_en": "ysaito",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1943678201546362881/8b8-bbJq_400x400.jpg",
+      "avatar": "images/avatars/ysaito8015.jpg",
       "links": {
         "twitter": "https://twitter.com/ysaito8015",
         "github": ""
@@ -27,7 +27,7 @@
       "name_en": "Senoue",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1951452891304345600/HWCkBlFE_400x400.jpg",
+      "avatar": "images/avatars/senoue.jpg",
       "links": {
         "twitter": "https://twitter.com/senoue",
         "github": ""
@@ -38,7 +38,7 @@
       "name_en": "micchie",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1835841824587759616/FOw7ffJ__400x400.jpg",
+      "avatar": "images/avatars/micchiebear.jpg",
       "links": {
         "twitter": "https://twitter.com/micchiebear",
         "github": ""
@@ -49,7 +49,7 @@
       "name_en": "satoken",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1120935948173234176/_BsyuTAi_400x400.png",
+      "avatar": "images/avatars/ken5owata.png",
       "links": {
         "twitter": "https://twitter.com/ken5owata",
         "github": ""
@@ -60,21 +60,21 @@
       "name_en": "taknb2nch",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1976153504399187968/dTPS5Umk_400x400.png",
+      "avatar": "images/avatars/taknb2nch.png",
       "links": {
         "twitter": "https://twitter.com/taknb2nch",
         "github": ""
       }
     },
     {
-      "name":"MakKi",
-      "name_en":"MakKi",
-      "role":"スタッフ",
-      "role_en":"Staff",
-      "avatar":"https://pbs.twimg.com/profile_images/999215308/milk_400x400.jpg",
-      "links":{
-        "twitter":"https://twitter.com/makki_d",
-        "github":""
+      "name": "MakKi",
+      "name_en": "MakKi",
+      "role": "スタッフ",
+      "role_en": "Staff",
+      "avatar": "images/avatars/makki_d.jpg",
+      "links": {
+        "twitter": "https://twitter.com/makki_d",
+        "github": ""
       }
     },
     {
@@ -82,7 +82,7 @@
       "name_en": "Tam",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1962452384338386944/At18HrK__400x400.jpg",
+      "avatar": "images/avatars/tam_x.jpg",
       "links": {
         "twitter": "https://twitter.com/tam_x",
         "github": ""
@@ -93,7 +93,7 @@
       "name_en": "Takuto Nagami",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1935696113576636416/QpX0kWAO_400x400.jpg",
+      "avatar": "images/avatars/logica0419.jpg",
       "links": {
         "twitter": "https://twitter.com/logica0419",
         "github": ""
@@ -104,7 +104,7 @@
       "name_en": "Kizuku",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1773157091991281664/eZ2xTL8t_400x400.jpg",
+      "avatar": "images/avatars/kizuku_tech.jpg",
       "links": {
         "twitter": "https://twitter.com/Kizuku_tech",
         "github": ""
@@ -115,7 +115,7 @@
       "name_en": "Momo",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1496146482961215492/WyHmWjxc_400x400.png",
+      "avatar": "images/avatars/mom0tomo.png",
       "links": {
         "twitter": "https://twitter.com/mom0tomo",
         "github": ""
@@ -126,7 +126,7 @@
       "name_en": "Gunzi",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1321379166332178433/Pqx9MiNH_400x400.jpg",
+      "avatar": "images/avatars/com_gunzi.jpg",
       "links": {
         "twitter": "https://twitter.com/com_gunzi",
         "github": ""
@@ -137,7 +137,7 @@
       "name_en": "haruyama",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1933150342755299328/lob5ybHw_400x400.png",
+      "avatar": "images/avatars/haruyama480.png",
       "links": {
         "twitter": "https://twitter.com/haruyama480",
         "github": ""
@@ -148,9 +148,9 @@
       "name_en": "Rinrin",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1726593907914645504/LSY8PhIe_400x400.jpg",
+      "avatar": "images/avatars/rin2yh.jpg",
       "links": {
-        "twitter": "https://twitter.com/Yuukih52144351",
+        "twitter": "https://x.com/rin2yh",
         "github": ""
       }
     },
@@ -159,7 +159,7 @@
       "name_en": "KojiKa",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1907558735230451712/1KqnUIl7_400x400.jpg",
+      "avatar": "images/avatars/_ko2ka_.jpg",
       "links": {
         "twitter": "https://twitter.com/_ko2ka_",
         "github": ""
@@ -170,7 +170,7 @@
       "name_en": "hutoboshi",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1964546821449265152/2M5vlXjU_400x400.jpg",
+      "avatar": "images/avatars/hutoccho_boshi.jpg",
       "links": {
         "twitter": "https://twitter.com/hutoccho_boshi",
         "github": ""
@@ -181,7 +181,7 @@
       "name_en": "Misato",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1827348356466929665/sHkHfu_l_400x400.jpg",
+      "avatar": "images/avatars/mikkegt.jpg",
       "links": {
         "twitter": "https://twitter.com/mikkegt",
         "github": ""
@@ -192,7 +192,7 @@
       "name_en": "ばばしお",
       "role": "スタッフ",
       "role_en": "Staff",
-      "avatar": "https://pbs.twimg.com/profile_images/1858909016283639809/P7uyC2xI_400x400.jpg",
+      "avatar": "images/avatars/tokyo_887.jpg",
       "links": {
         "twitter": "https://twitter.com/tokyo_887",
         "github": ""

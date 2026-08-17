@@ -1,0 +1,1267 @@
+[
+  {
+    "date": "2025-10-12T00:00:00Z",
+    "isDefault": false,
+    "rooms": [
+      {
+        "id": 61194,
+        "name": "Room B",
+        "sessions": [
+          {
+            "id": "ac755a98-708c-4ca0-8a2f-7fc2d9b32190",
+            "title": "開場 + 受付",
+            "description": null,
+            "startsAt": "2025-10-12T01:00:00Z",
+            "endsAt": "2025-10-12T01:30:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "61846a53-a214-403b-85f7-7964b712856d",
+            "title": "オープニング",
+            "description": null,
+            "startsAt": "2025-10-12T01:30:00Z",
+            "endsAt": "2025-10-12T01:45:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "fa85b21f-cebf-4924-81ac-471f55c1e6c6",
+            "title": "オープニング : TinyGo & TinyGo Keeb & … (sago35)",
+            "description": null,
+            "startsAt": "2025-10-12T01:45:00Z",
+            "endsAt": "2025-10-12T02:00:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "998122",
+            "title": "USB安定性の改善とTinyGoの貢献事例",
+            "description": "RP2040 USB接続の安定性問題を解決した事例を紹介します。発見から原因特定、修正の検証、そしてプルリクエストが受け入れられるまでの流れを、OSSへの貢献実践例として解説します。",
+            "startsAt": "2025-10-12T02:10:00Z",
+            "endsAt": "2025-10-12T02:30:00Z",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "51bca77b-9883-4cf7-bd7b-1b14a27b8ba7",
+                "name": "You Kitano"
+              }
+            ],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": "Accepted",
+            "isInformed": true,
+            "isConfirmed": true
+          },
+          {
+            "id": "994632",
+            "title": "TinyGo でも GraphQL サーバをビルドしたい！ ~ tinygo でもビルドできる GraphQL ランタイム ~",
+            "description": "本セッションでは、TinyGo でもビルドできる GraphQL ランタイムの開発の話をしようと考えております。\r\nセッション構成は以下のように考えています。\r\n\r\n- TinyGo で GraphQL ランタイムを利用したいモチベーション\r\n- GrahpQL の重厚な機能をどのように TinyGo で利用できる形にするための工夫\r\n- TinyGo で GraphQL が使えることでのエッジコンピューティングにおけるネットワークの拡張の可能性について\r\n- 今後の GraphQL ランタイムの展望\r\n\r\nTinyGo は golang/go と比べてサポートされている標準パッケージおよびパッケージの機能が絞られています。\r\nそのため、重厚な機能を持ったライブラリやフレームワークを利用する場合は利用できない場合が多いです。\r\ngolang のGraphQL サーバの開発で最も利用されているであろう gqlgen もその利用できないライブラリの1つになります。\r\nかなりエッジケースですが、tinygo でも GraphQL を利用したいケースが存在する可能性があります。\r\n\r\n例えば以下のようなケースです。\r\n- エッジゲートウェイまでの通信で必要な情報の送受信をスキーマファーストの GraphQL で実装したい。\r\n- RESTAPI だとレスポンスボディに不要なデータを含める必要があるため、ネットワークのコストを抑えるために GraphQL を採用したい\r\n\r\nこのような課題を解決するために、tinygo でも利用できる GraphQL のランタイムを開発を進めています。",
+            "startsAt": "2025-10-12T02:40:00Z",
+            "endsAt": "2025-10-12T03:00:00Z",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "d8195839-eecc-4adc-840c-2508e607b3ae",
+                "name": "Keisuke Nakamura"
+              }
+            ],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": "Accepted",
+            "isInformed": true,
+            "isConfirmed": true
+          },
+          {
+            "id": "9124338e-66da-47fa-93f0-e247e17a8649",
+            "title": "展示、ワークショップ見学 (～14:30 までの昼休憩中も継続開催)",
+            "description": null,
+            "startsAt": "2025-10-12T03:00:00Z",
+            "endsAt": "2025-10-12T04:00:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "1eba486c-e7d1-4109-9e25-ff8bafdee58d",
+            "title": "Lunch (～14:30)",
+            "description": null,
+            "startsAt": "2025-10-12T04:00:00Z",
+            "endsAt": "2025-10-12T04:55:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "991804",
+            "title": "Hardware fun with Tinygo: Games & Toys",
+            "description": "What if gaming didn’t require a powerful computer or even a traditional console? In this talk, we’ll explore how with TinyGo you can create interactive games and experiences directly on microcontrollers and embedded hardware. From LED matrix games to unconventional input methods and minimalist sound effects, we’ll demonstrate how to harness the simplicity of TinyGo for innovative hardware projects.\r\n\r\nWhether you're a seasoned Go developer curious about embedded systems or a hardware tinkerer looking for new ways to code your ideas, join us for a fun, hands-on dive into the possibilities of TinyGo-powered gaming, no computer required!",
+            "startsAt": "2025-10-12T05:30:00Z",
+            "endsAt": "2025-10-12T06:00:00Z",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "6124b59e-e3bd-4396-877b-d2adcf2771c2",
+                "name": "Daniel Esteban"
+              }
+            ],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": "Accepted",
+            "isInformed": true,
+            "isConfirmed": true
+          },
+          {
+            "id": "1016177",
+            "title": "TinyGoはどのように \"Tiny\" を実現している？",
+            "description": "Go言語はあらゆる用途で生産性の高い言語として広く使われていますが、そのままでは組み込み開発やWebAssemblyのような小さな環境で動かすには不向きです。\r\nこの課題を解決するために登場したのが「TinyGo」です。\r\nTinyGoはバイナリサイズの削減や小規模ランタイムの提供によって、マイコンやブラウザ上でもGoコードを動かせるようにしています。\r\n\r\n本セッションでは、TinyGoがどのようにその目的を解決し、Goとはどのような差異があり、何ができて何ができないのかを解説します。\r\nこのセッションを聞いた上で他のセッションやワークショップに参加することで、学びがよりスムーズになるはずです。\r\n\r\n# Agenda\r\n導入、TinyGoが生まれた背景について (2分)\r\nGoとTinyGoの違い (3分)\r\n- ランタイム、GC、goroutine、標準ライブラリ、最適化\r\n- Hello Worldのバイナリサイズ比較\r\nGoとTinyGoのコンパイルフローの違い (5分)\r\n- LLVMとそれを活用する目的の解説\r\nTinyGoがランタイムをどのように縮小しているか (5分)\r\n- GC, goroutine, 標準ライブラリの制限",
+            "startsAt": "2025-10-12T06:10:00Z",
+            "endsAt": "2025-10-12T06:15:00Z",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "88343236-2ac4-4d4f-af68-865442fb14ce",
+                "name": "Daichi Ujimoto"
+              }
+            ],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": "Accepted",
+            "isInformed": true,
+            "isConfirmed": true
+          },
+          {
+            "id": "0b51508f-d874-4d17-b170-c724e17a3539",
+            "title": "TinyGo のこれまでとこれから (sago35)",
+            "description": null,
+            "startsAt": "2025-10-12T06:40:00Z",
+            "endsAt": "2025-10-12T07:00:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "6e8d468b-d26a-4a79-899f-620a28a593da",
+            "title": "組み込み未経験者が TinyGo を楽しむコツ 〜 みんなと沼で溺れよう (micchie)",
+            "description": null,
+            "startsAt": "2025-10-12T07:10:00Z",
+            "endsAt": "2025-10-12T07:15:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "0aef6d19-28eb-492d-9af1-9b41a5ecdf58",
+            "title": "TinyGoで実装する！ 俺の最強ステアリングコントローラー (senoue)",
+            "description": null,
+            "startsAt": "2025-10-12T07:15:00Z",
+            "endsAt": "2025-10-12T07:20:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "0aabef00-ba62-46cc-a2fd-8e571b411eb0",
+            "title": "TinyGoで実装する！ 俺の最強ステアリングコントローラー (nobonobo)",
+            "description": null,
+            "startsAt": "2025-10-12T07:20:00Z",
+            "endsAt": "2025-10-12T07:25:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "1017535",
+            "title": "Wasmのエコシステムを使ったツール作成方法",
+            "description": "GoでWasmのサポートが最も進んでいるのがTinyGoです。\r\nこのトークでは、TinyGoを使ってWasmを作成し、現状のWasmのエコシステムで同活用できるのかを紹介します。",
+            "startsAt": "2025-10-12T07:25:00Z",
+            "endsAt": "2025-10-12T07:30:00Z",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "a5f2fdf2-4459-4f50-982e-686d4e9832aa",
+                "name": "Asuka Yagi"
+              }
+            ],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": "Accepted",
+            "isInformed": true,
+            "isConfirmed": true
+          },
+          {
+            "id": "1003111",
+            "title": "組込みだけじゃない！TinyGo で始める無料クラウド開発入門",
+            "description": "本LTでは、TinyGoを活用した無料でのクラウド開発についてご紹介します。\r\nTinyGo は組込み機器向けGo言語コンパイラとして知られていますが、Wasm や WASIを活用することでクラウド環境でも動作させることができます。\r\nWasm および WASI の違いを踏まえた上で、デプロイ先として活用できるサービスをいくつかご紹介します。\r\nこのLTを通じて TinyGo と Wasm/WASI を知ることでクラウド開発の新たな選択肢を広げることをお伝えします。\r\nプログラミング初心者の方から、Go言語経験者、どなたでも手軽に無料で始められるクラウド開発の世界へお招きします。",
+            "startsAt": "2025-10-12T07:30:00Z",
+            "endsAt": "2025-10-12T07:35:00Z",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "78811c9f-16c2-4f37-b175-29072933df14",
+                "name": "Kotaro Otaka"
+              }
+            ],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": "Accepted",
+            "isInformed": true,
+            "isConfirmed": true
+          },
+          {
+            "id": "0fd44071-c2fd-43bc-81c0-5d903add40e9",
+            "title": "クロージング",
+            "description": null,
+            "startsAt": "2025-10-12T07:35:00Z",
+            "endsAt": "2025-10-12T07:45:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "06c6f60d-5753-456a-ac90-d66d0d4b3a73",
+            "title": "撤収",
+            "description": null,
+            "startsAt": "2025-10-12T07:45:00Z",
+            "endsAt": "2025-10-12T09:00:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61194,
+            "room": "Room B",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      },
+      {
+        "id": 61195,
+        "name": "Room C",
+        "sessions": [
+          {
+            "id": "752b94d0-318d-492e-8963-320538ca88c2",
+            "title": "展示 ＋ ブース",
+            "description": null,
+            "startsAt": "2025-10-12T01:15:00Z",
+            "endsAt": "2025-10-12T04:00:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61195,
+            "room": "Room C",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "0c5d3dec-b029-4b70-9ceb-7adabd328f99",
+            "title": "Lunch (～14:30)",
+            "description": null,
+            "startsAt": "2025-10-12T04:00:00Z",
+            "endsAt": "2025-10-12T04:55:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61195,
+            "room": "Room C",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "ecc2d0a6-1e24-42cd-8ab4-9d57f345dda2",
+            "title": "(撤収)",
+            "description": null,
+            "startsAt": "2025-10-12T06:15:00Z",
+            "endsAt": "2025-10-12T09:00:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61195,
+            "room": "Room C",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      },
+      {
+        "id": 61196,
+        "name": "Room D",
+        "sessions": [
+          {
+            "id": "813d8d3e-f291-4fdc-aac8-f55f5991d6d3",
+            "title": "ワークショップ会場スタート",
+            "description": null,
+            "startsAt": "2025-10-12T01:45:00Z",
+            "endsAt": "2025-10-12T02:00:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61196,
+            "room": "Room D",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "f26b7235-b8eb-4d46-b9de-94384afbc275",
+            "title": "ワークショップ予約枠1 (11:00～12:15)",
+            "description": null,
+            "startsAt": "2025-10-12T02:00:00Z",
+            "endsAt": "2025-10-12T03:15:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61196,
+            "room": "Room D",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "7aceb2b6-0e71-4a98-81b9-3cf4f661574a",
+            "title": "ワークショップ予約枠2 (12:30～13:45)",
+            "description": null,
+            "startsAt": "2025-10-12T03:30:00Z",
+            "endsAt": "2025-10-12T04:45:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61196,
+            "room": "Room D",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "c9925369-ff51-448d-8d48-62153c2e153f",
+            "title": "Lunch (～14:30)",
+            "description": null,
+            "startsAt": "2025-10-12T04:00:00Z",
+            "endsAt": "2025-10-12T04:55:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61196,
+            "room": "Room D",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "4df90503-f7b6-4876-9eee-35cb72ccfecf",
+            "title": "ワークショップ予約枠3 (14:00～15:15)",
+            "description": null,
+            "startsAt": "2025-10-12T05:00:00Z",
+            "endsAt": "2025-10-12T06:15:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61196,
+            "room": "Room D",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          },
+          {
+            "id": "c5d4e484-766a-44f5-9574-49b8c56e03ff",
+            "title": "(撤収)",
+            "description": null,
+            "startsAt": "2025-10-12T06:15:00Z",
+            "endsAt": "2025-10-12T09:00:00Z",
+            "isServiceSession": true,
+            "isPlenumSession": false,
+            "speakers": [],
+            "categories": [],
+            "roomId": 61196,
+            "room": "Room D",
+            "liveUrl": null,
+            "recordingUrl": null,
+            "status": null,
+            "isInformed": false,
+            "isConfirmed": false
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      }
+    ],
+    "timeSlots": [
+      {
+        "slotStart": "01:00:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "ac755a98-708c-4ca0-8a2f-7fc2d9b32190",
+              "title": "開場 + 受付",
+              "description": null,
+              "startsAt": "2025-10-12T01:00:00Z",
+              "endsAt": "2025-10-12T01:30:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "01:15:00",
+        "rooms": [
+          {
+            "id": 61195,
+            "name": "Room C",
+            "session": {
+              "id": "752b94d0-318d-492e-8963-320538ca88c2",
+              "title": "展示 ＋ ブース",
+              "description": null,
+              "startsAt": "2025-10-12T01:15:00Z",
+              "endsAt": "2025-10-12T04:00:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61195,
+              "room": "Room C",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 1
+          }
+        ]
+      },
+      {
+        "slotStart": "01:30:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "61846a53-a214-403b-85f7-7964b712856d",
+              "title": "オープニング",
+              "description": null,
+              "startsAt": "2025-10-12T01:30:00Z",
+              "endsAt": "2025-10-12T01:45:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "01:45:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "fa85b21f-cebf-4924-81ac-471f55c1e6c6",
+              "title": "オープニング : TinyGo & TinyGo Keeb & … (sago35)",
+              "description": null,
+              "startsAt": "2025-10-12T01:45:00Z",
+              "endsAt": "2025-10-12T02:00:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          },
+          {
+            "id": 61196,
+            "name": "Room D",
+            "session": {
+              "id": "813d8d3e-f291-4fdc-aac8-f55f5991d6d3",
+              "title": "ワークショップ会場スタート",
+              "description": null,
+              "startsAt": "2025-10-12T01:45:00Z",
+              "endsAt": "2025-10-12T02:00:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61196,
+              "room": "Room D",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "02:00:00",
+        "rooms": [
+          {
+            "id": 61196,
+            "name": "Room D",
+            "session": {
+              "id": "f26b7235-b8eb-4d46-b9de-94384afbc275",
+              "title": "ワークショップ予約枠1 (11:00～12:15)",
+              "description": null,
+              "startsAt": "2025-10-12T02:00:00Z",
+              "endsAt": "2025-10-12T03:15:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61196,
+              "room": "Room D",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "02:10:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "998122",
+              "title": "USB安定性の改善とTinyGoの貢献事例",
+              "description": "RP2040 USB接続の安定性問題を解決した事例を紹介します。発見から原因特定、修正の検証、そしてプルリクエストが受け入れられるまでの流れを、OSSへの貢献実践例として解説します。",
+              "startsAt": "2025-10-12T02:10:00Z",
+              "endsAt": "2025-10-12T02:30:00Z",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "51bca77b-9883-4cf7-bd7b-1b14a27b8ba7",
+                  "name": "You Kitano"
+                }
+              ],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": "Accepted",
+              "isInformed": true,
+              "isConfirmed": true
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "02:40:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "994632",
+              "title": "TinyGo でも GraphQL サーバをビルドしたい！ ~ tinygo でもビルドできる GraphQL ランタイム ~",
+              "description": "本セッションでは、TinyGo でもビルドできる GraphQL ランタイムの開発の話をしようと考えております。\r\nセッション構成は以下のように考えています。\r\n\r\n- TinyGo で GraphQL ランタイムを利用したいモチベーション\r\n- GrahpQL の重厚な機能をどのように TinyGo で利用できる形にするための工夫\r\n- TinyGo で GraphQL が使えることでのエッジコンピューティングにおけるネットワークの拡張の可能性について\r\n- 今後の GraphQL ランタイムの展望\r\n\r\nTinyGo は golang/go と比べてサポートされている標準パッケージおよびパッケージの機能が絞られています。\r\nそのため、重厚な機能を持ったライブラリやフレームワークを利用する場合は利用できない場合が多いです。\r\ngolang のGraphQL サーバの開発で最も利用されているであろう gqlgen もその利用できないライブラリの1つになります。\r\nかなりエッジケースですが、tinygo でも GraphQL を利用したいケースが存在する可能性があります。\r\n\r\n例えば以下のようなケースです。\r\n- エッジゲートウェイまでの通信で必要な情報の送受信をスキーマファーストの GraphQL で実装したい。\r\n- RESTAPI だとレスポンスボディに不要なデータを含める必要があるため、ネットワークのコストを抑えるために GraphQL を採用したい\r\n\r\nこのような課題を解決するために、tinygo でも利用できる GraphQL のランタイムを開発を進めています。",
+              "startsAt": "2025-10-12T02:40:00Z",
+              "endsAt": "2025-10-12T03:00:00Z",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "d8195839-eecc-4adc-840c-2508e607b3ae",
+                  "name": "Keisuke Nakamura"
+                }
+              ],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": "Accepted",
+              "isInformed": true,
+              "isConfirmed": true
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "03:00:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "9124338e-66da-47fa-93f0-e247e17a8649",
+              "title": "展示、ワークショップ見学 (～14:30 までの昼休憩中も継続開催)",
+              "description": null,
+              "startsAt": "2025-10-12T03:00:00Z",
+              "endsAt": "2025-10-12T04:00:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "03:30:00",
+        "rooms": [
+          {
+            "id": 61196,
+            "name": "Room D",
+            "session": {
+              "id": "7aceb2b6-0e71-4a98-81b9-3cf4f661574a",
+              "title": "ワークショップ予約枠2 (12:30～13:45)",
+              "description": null,
+              "startsAt": "2025-10-12T03:30:00Z",
+              "endsAt": "2025-10-12T04:45:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61196,
+              "room": "Room D",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "04:00:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "1eba486c-e7d1-4109-9e25-ff8bafdee58d",
+              "title": "Lunch (～14:30)",
+              "description": null,
+              "startsAt": "2025-10-12T04:00:00Z",
+              "endsAt": "2025-10-12T04:55:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          },
+          {
+            "id": 61195,
+            "name": "Room C",
+            "session": {
+              "id": "0c5d3dec-b029-4b70-9ceb-7adabd328f99",
+              "title": "Lunch (～14:30)",
+              "description": null,
+              "startsAt": "2025-10-12T04:00:00Z",
+              "endsAt": "2025-10-12T04:55:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61195,
+              "room": "Room C",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 1
+          },
+          {
+            "id": 61196,
+            "name": "Room D",
+            "session": {
+              "id": "c9925369-ff51-448d-8d48-62153c2e153f",
+              "title": "Lunch (～14:30)",
+              "description": null,
+              "startsAt": "2025-10-12T04:00:00Z",
+              "endsAt": "2025-10-12T04:55:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61196,
+              "room": "Room D",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "05:00:00",
+        "rooms": [
+          {
+            "id": 61196,
+            "name": "Room D",
+            "session": {
+              "id": "4df90503-f7b6-4876-9eee-35cb72ccfecf",
+              "title": "ワークショップ予約枠3 (14:00～15:15)",
+              "description": null,
+              "startsAt": "2025-10-12T05:00:00Z",
+              "endsAt": "2025-10-12T06:15:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61196,
+              "room": "Room D",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "05:30:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "991804",
+              "title": "Hardware fun with Tinygo: Games & Toys",
+              "description": "What if gaming didn’t require a powerful computer or even a traditional console? In this talk, we’ll explore how with TinyGo you can create interactive games and experiences directly on microcontrollers and embedded hardware. From LED matrix games to unconventional input methods and minimalist sound effects, we’ll demonstrate how to harness the simplicity of TinyGo for innovative hardware projects.\r\n\r\nWhether you're a seasoned Go developer curious about embedded systems or a hardware tinkerer looking for new ways to code your ideas, join us for a fun, hands-on dive into the possibilities of TinyGo-powered gaming, no computer required!",
+              "startsAt": "2025-10-12T05:30:00Z",
+              "endsAt": "2025-10-12T06:00:00Z",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "6124b59e-e3bd-4396-877b-d2adcf2771c2",
+                  "name": "Daniel Esteban"
+                }
+              ],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": "Accepted",
+              "isInformed": true,
+              "isConfirmed": true
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "06:10:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "1016177",
+              "title": "TinyGoはどのように \"Tiny\" を実現している？",
+              "description": "Go言語はあらゆる用途で生産性の高い言語として広く使われていますが、そのままでは組み込み開発やWebAssemblyのような小さな環境で動かすには不向きです。\r\nこの課題を解決するために登場したのが「TinyGo」です。\r\nTinyGoはバイナリサイズの削減や小規模ランタイムの提供によって、マイコンやブラウザ上でもGoコードを動かせるようにしています。\r\n\r\n本セッションでは、TinyGoがどのようにその目的を解決し、Goとはどのような差異があり、何ができて何ができないのかを解説します。\r\nこのセッションを聞いた上で他のセッションやワークショップに参加することで、学びがよりスムーズになるはずです。\r\n\r\n# Agenda\r\n導入、TinyGoが生まれた背景について (2分)\r\nGoとTinyGoの違い (3分)\r\n- ランタイム、GC、goroutine、標準ライブラリ、最適化\r\n- Hello Worldのバイナリサイズ比較\r\nGoとTinyGoのコンパイルフローの違い (5分)\r\n- LLVMとそれを活用する目的の解説\r\nTinyGoがランタイムをどのように縮小しているか (5分)\r\n- GC, goroutine, 標準ライブラリの制限",
+              "startsAt": "2025-10-12T06:10:00Z",
+              "endsAt": "2025-10-12T06:15:00Z",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "88343236-2ac4-4d4f-af68-865442fb14ce",
+                  "name": "Daichi Ujimoto"
+                }
+              ],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": "Accepted",
+              "isInformed": true,
+              "isConfirmed": true
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "06:15:00",
+        "rooms": [
+          {
+            "id": 61195,
+            "name": "Room C",
+            "session": {
+              "id": "ecc2d0a6-1e24-42cd-8ab4-9d57f345dda2",
+              "title": "(撤収)",
+              "description": null,
+              "startsAt": "2025-10-12T06:15:00Z",
+              "endsAt": "2025-10-12T09:00:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61195,
+              "room": "Room C",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 1
+          },
+          {
+            "id": 61196,
+            "name": "Room D",
+            "session": {
+              "id": "c5d4e484-766a-44f5-9574-49b8c56e03ff",
+              "title": "(撤収)",
+              "description": null,
+              "startsAt": "2025-10-12T06:15:00Z",
+              "endsAt": "2025-10-12T09:00:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61196,
+              "room": "Room D",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "06:40:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "0b51508f-d874-4d17-b170-c724e17a3539",
+              "title": "TinyGo のこれまでとこれから (sago35)",
+              "description": null,
+              "startsAt": "2025-10-12T06:40:00Z",
+              "endsAt": "2025-10-12T07:00:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "07:10:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "6e8d468b-d26a-4a79-899f-620a28a593da",
+              "title": "組み込み未経験者が TinyGo を楽しむコツ 〜 みんなと沼で溺れよう (micchie)",
+              "description": null,
+              "startsAt": "2025-10-12T07:10:00Z",
+              "endsAt": "2025-10-12T07:15:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "07:15:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "0aef6d19-28eb-492d-9af1-9b41a5ecdf58",
+              "title": "TinyGoで実装する！ 俺の最強ステアリングコントローラー (senoue)",
+              "description": null,
+              "startsAt": "2025-10-12T07:15:00Z",
+              "endsAt": "2025-10-12T07:20:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "07:20:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "0aabef00-ba62-46cc-a2fd-8e571b411eb0",
+              "title": "TinyGoで実装する！ 俺の最強ステアリングコントローラー (nobonobo)",
+              "description": null,
+              "startsAt": "2025-10-12T07:20:00Z",
+              "endsAt": "2025-10-12T07:25:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "07:25:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "1017535",
+              "title": "Wasmのエコシステムを使ったツール作成方法",
+              "description": "GoでWasmのサポートが最も進んでいるのがTinyGoです。\r\nこのトークでは、TinyGoを使ってWasmを作成し、現状のWasmのエコシステムで同活用できるのかを紹介します。",
+              "startsAt": "2025-10-12T07:25:00Z",
+              "endsAt": "2025-10-12T07:30:00Z",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "a5f2fdf2-4459-4f50-982e-686d4e9832aa",
+                  "name": "Asuka Yagi"
+                }
+              ],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": "Accepted",
+              "isInformed": true,
+              "isConfirmed": true
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "07:30:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "1003111",
+              "title": "組込みだけじゃない！TinyGo で始める無料クラウド開発入門",
+              "description": "本LTでは、TinyGoを活用した無料でのクラウド開発についてご紹介します。\r\nTinyGo は組込み機器向けGo言語コンパイラとして知られていますが、Wasm や WASIを活用することでクラウド環境でも動作させることができます。\r\nWasm および WASI の違いを踏まえた上で、デプロイ先として活用できるサービスをいくつかご紹介します。\r\nこのLTを通じて TinyGo と Wasm/WASI を知ることでクラウド開発の新たな選択肢を広げることをお伝えします。\r\nプログラミング初心者の方から、Go言語経験者、どなたでも手軽に無料で始められるクラウド開発の世界へお招きします。",
+              "startsAt": "2025-10-12T07:30:00Z",
+              "endsAt": "2025-10-12T07:35:00Z",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "78811c9f-16c2-4f37-b175-29072933df14",
+                  "name": "Kotaro Otaka"
+                }
+              ],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": "Accepted",
+              "isInformed": true,
+              "isConfirmed": true
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "07:35:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "0fd44071-c2fd-43bc-81c0-5d903add40e9",
+              "title": "クロージング",
+              "description": null,
+              "startsAt": "2025-10-12T07:35:00Z",
+              "endsAt": "2025-10-12T07:45:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "07:45:00",
+        "rooms": [
+          {
+            "id": 61194,
+            "name": "Room B",
+            "session": {
+              "id": "06c6f60d-5753-456a-ac90-d66d0d4b3a73",
+              "title": "撤収",
+              "description": null,
+              "startsAt": "2025-10-12T07:45:00Z",
+              "endsAt": "2025-10-12T09:00:00Z",
+              "isServiceSession": true,
+              "isPlenumSession": false,
+              "speakers": [],
+              "categories": [],
+              "roomId": 61194,
+              "room": "Room B",
+              "liveUrl": null,
+              "recordingUrl": null,
+              "status": null,
+              "isInformed": false,
+              "isConfirmed": false
+            },
+            "index": 0
+          }
+        ]
+      }
+    ]
+  }
+]

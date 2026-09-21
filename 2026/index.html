@@ -41,6 +41,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
             background: var(--bg);
             background-image: var(--bg-grad);
+            background-repeat: no-repeat;
             color: var(--fg);
             line-height: 1.6;
             min-height: 100vh;
@@ -112,7 +113,7 @@
             font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em;
             color: var(--accent); text-transform: uppercase; margin-bottom: 16px;
         }
-        .section-text { color: var(--fg-dim); max-width: 640px; margin-bottom: 16px; }
+        .section-text { color: var(--fg-dim); margin-bottom: 16px; }
         .section-text a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: border-color 0.15s; }
         .section-text a:hover { border-bottom-color: var(--accent); }
         .cta-btn {
@@ -122,6 +123,75 @@
         }
         .cta-btn:hover { opacity: 0.85; }
         .note { display: block; margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--fg-dim); }
+
+        .tabs { display: flex; gap: 8px; margin: 32px 0 16px; }
+        .tab-btn {
+            font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em;
+            background: transparent; border: 1px solid var(--line); color: var(--fg-dim);
+            padding: 10px 18px; border-radius: 6px; cursor: pointer; transition: all 0.15s;
+        }
+        .tab-btn:hover { color: var(--fg); border-color: var(--fg-dim); }
+        .tab-btn.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        .timetable-wrap {
+            --tt-line: rgba(255, 255, 255, 0.18);
+            border: 1px solid var(--tt-line); border-radius: 8px; overflow-x: auto;
+            background: var(--line);
+        }
+        .timetable { width: 100%; min-width: 620px; border-collapse: collapse; table-layout: fixed; }
+        .timetable .c-time { width: 96px; }
+        .timetable .c-ws { width: 30%; }
+        .timetable tr { height: 8px; }
+        .timetable th, .timetable td {
+            text-align: left; vertical-align: top; padding: 10px 16px;
+            border: 1px solid var(--tt-line); border-bottom: 0;
+            background: rgba(10, 14, 26, 0.6);
+        }
+        .timetable th:first-child, .timetable td:first-child { border-left: 0; }
+        .timetable th:last-child, .timetable td:last-child { border-right: 0; }
+        .timetable thead th {
+            font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 400;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-dim);
+            border-top: 0; padding: 14px 16px 12px;
+        }
+        .timetable td.tt-time {
+            font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent);
+            white-space: nowrap; padding: 6px 16px;
+        }
+        .timetable td.tt-time.cont { border-top: 0; border-bottom: 0; padding: 0 16px; }
+        .tt-title { font-size: 15px; font-weight: 500; line-height: 1.4; }
+        .tt-speaker { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--fg-dim); margin-top: 6px; }
+        .tt-tag {
+            display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px;
+            letter-spacing: 0.1em; color: var(--accent); background: var(--accent-soft);
+            border-radius: 4px; padding: 2px 6px; margin-right: 8px; vertical-align: 2px;
+        }
+        .timetable .meta .tt-title { color: var(--fg-dim); font-weight: 400; font-size: 14px; }
+        .timetable .tt-ws {
+            background-image: linear-gradient(rgba(0, 180, 216, 0.07), rgba(0, 180, 216, 0.07));
+        }
+        .timetable .tt-ws.tt-gap { background-image: none; }
+        .timetable .tt-edge td { padding-top: 8px; padding-bottom: 8px; }
+
+        .speaker-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1px; background: var(--line);
+            border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+        }
+        .speaker {
+            background: rgba(10, 14, 26, 0.6); padding: 20px 24px;
+            display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: start;
+        }
+        .speaker-photo {
+            width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+            background: var(--accent-soft); border: 1px solid var(--line);
+        }
+        .speaker-name { font-size: 16px; font-weight: 500; }
+        .speaker-name a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: border-color 0.15s; }
+        .speaker-name a:hover { border-bottom-color: var(--accent); }
+        .speaker-session { font-size: 13px; color: var(--fg-dim); margin-top: 8px; line-height: 1.4; }
 
         .status-row { display: flex; flex-wrap: wrap; gap: 12px; }
         .status {
@@ -156,6 +226,10 @@
             header { padding-bottom: 32px; }
             .hero { padding: 48px 0 64px; }
             .info-cell { padding: 22px 20px; }
+            .timetable th, .timetable td { padding: 8px 12px; }
+            .timetable .c-time { width: 84px; }
+            .tt-title { font-size: 14px; }
+            .speaker { padding: 18px 20px; }
         }
     </style>
 </head>
@@ -248,6 +322,521 @@
 
         <section class="section">
             <h2 class="section-title">
+                <span class="lang-ja">セッション・登壇者</span>
+                <span class="lang-en">Sessions & Speakers</span>
+            </h2>
+            <p class="section-text">
+                <span class="lang-ja">当日のタイムテーブルです。ワークショップ・展示・ブースの詳細を含め、内容は変更になる場合があります。最新情報は <a href="https://tinygo-keeb.connpass.com/event/401931/" target="_blank">connpass のイベントページ</a>をご覧ください。</span>
+                <span class="lang-en">Here is the schedule for the day. Details — including workshops, exhibits and booths — are subject to change. For the latest information, see the <a href="https://tinygo-keeb.connpass.com/event/401931/" target="_blank">event page on connpass</a>.</span>
+            </p>
+
+            <div class="tabs" role="tablist">
+                <button class="tab-btn active" data-tab="timetable" role="tab" aria-selected="true" aria-controls="tab-timetable">
+                    <span class="lang-ja">タイムテーブル</span>
+                    <span class="lang-en">Timetable</span>
+                </button>
+                <button class="tab-btn" data-tab="speakers" role="tab" aria-selected="false" aria-controls="tab-speakers">
+                    <span class="lang-ja">登壇者</span>
+                    <span class="lang-en">Speakers</span>
+                </button>
+            </div>
+            <div class="tab-panel active" id="tab-timetable" role="tabpanel">
+                <div class="timetable-wrap">
+                <table class="timetable">
+                    <colgroup>
+                        <col class="c-time">
+                        <col class="c-main">
+                        <col class="c-ws">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th><span class="lang-ja">時間</span><span class="lang-en">Time</span></th>
+                            <th><span class="lang-ja">セッション</span><span class="lang-en">Sessions</span></th>
+                            <th><span class="lang-ja">ワークショップ</span><span class="lang-en">Workshops</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="tt-time">
+                            10:00
+                        </td>
+                        <td class="tt-session meta" rowspan="6">
+                            <div class="tt-title"><span class="lang-ja">開場、受付</span><span class="lang-en">Doors Open &amp; Reception</span></div>
+                        </td>
+                        <td class="tt-gap" rowspan="12"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            10:30
+                        </td>
+                        <td class="tt-session meta">
+                            <div class="tt-title"><span class="lang-ja">オープニング</span><span class="lang-en">Opening Remarks</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            10:35
+                        </td>
+                        <td class="tt-session" rowspan="3">
+                            <div class="tt-title"><span class="lang-ja">オープニングセッション</span><span class="lang-en">Opening Session</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            10:50
+                        </td>
+                        <td class="tt-gap" rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            11:00
+                        </td>
+                        <td class="tt-session" rowspan="4">
+                            <div class="tt-title"><span class="lang-ja">マルチコア時代の組み込み開発。mutexが破綻するとき。</span><span class="lang-en">Embedded Development in the Multi-Core Era: When Mutex Breaks Down</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">あーるどん (rdon-key)</span><span class="lang-en">rdon-key</span></div>
+                        </td>
+                        <td class="tt-ws" rowspan="18">
+                            <div class="tt-title"><span class="lang-ja">予約枠1 (90分)</span><span class="lang-en">Slot 1 (90 min)</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            11:20
+                        </td>
+                        <td class="tt-gap" rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            11:30
+                        </td>
+                        <td class="tt-session" rowspan="4">
+                            <div class="tt-title"><span class="lang-ja">TinyGoで時計を作ったら、DNSからTLSまで調べることになった</span><span class="lang-en">Building a Clock with TinyGo Led Me Down the Rabbit Hole from DNS to TLS</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">hnw</span><span class="lang-en">hnw</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            11:50
+                        </td>
+                        <td class="tt-gap" rowspan="26"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            12:30
+                        </td>
+                        <td class="tt-ws" rowspan="18">
+                            <div class="tt-title"><span class="lang-ja">予約枠2 (90分)</span><span class="lang-en">Slot 2 (90 min)</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            14:00
+                        </td>
+                        <td class="tt-session" rowspan="2">
+                            <div class="tt-title"><span class="lang-ja">TinyGoから理解するHID</span><span class="lang-en">Understanding HID through TinyGo</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">Rinrin</span><span class="lang-en">Rinrin</span></div>
+                        </td>
+                        <td class="tt-ws" rowspan="18">
+                            <div class="tt-title"><span class="lang-ja">予約枠3 (90分)</span><span class="lang-en">Slot 3 (90 min)</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            14:10
+                        </td>
+                        <td class="tt-session" rowspan="2">
+                            <div class="tt-title"><span class="lang-ja">TinyGoとGoをつなぐRPC</span><span class="lang-en">Connecting TinyGo and Go with RPC</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">NoboNobo</span><span class="lang-en">NoboNobo</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            14:20
+                        </td>
+                        <td class="tt-gap" rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            14:30
+                        </td>
+                        <td class="tt-session" rowspan="4">
+                            <div class="tt-title"><span class="lang-ja">Big/Tiny GOTOOLCHAIN</span><span class="lang-en">Big/Tiny GOTOOLCHAIN</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">sivchari</span><span class="lang-en">sivchari</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            14:50
+                        </td>
+                        <td class="tt-gap" rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            15:00
+                        </td>
+                        <td class="tt-session" rowspan="4">
+                            <div class="tt-title"><span class="lang-ja">TinyGoでオブザーバビリティ？OpenTelemetryはTinyGoで使えるのか</span><span class="lang-en">Observability with TinyGo? Can We Use OpenTelemetry with TinyGo?</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">山口能迪</span><span class="lang-en">Yoshiki Yamaguchi</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            15:20
+                        </td>
+                        <td class="tt-gap" rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            15:30
+                        </td>
+                        <td class="tt-session">
+                            <div class="tt-title"><span class="tt-tag">LT</span><span class="lang-ja">ワークショップで作ったzero-kb02をCodexの物理UIにしてみた</span><span class="lang-en">Turning the zero-kb02 from the Workshop into a Physical UI for Codex</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">Ibuki</span><span class="lang-en">Ibuki</span></div>
+                        </td>
+                        <td class="tt-gap" rowspan="20"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            15:35
+                        </td>
+                        <td class="tt-session">
+                            <div class="tt-title"><span class="tt-tag">LT</span><span class="lang-ja">zero-micro：Codex Microがzero-kb02にそっくりだったので作ったった</span><span class="lang-en">zero-micro: Built It Because Codex Micro Looked Just Like zero-kb02</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">MakKi</span><span class="lang-en">MakKi</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            15:40
+                        </td>
+                        <td class="tt-session">
+                            <div class="tt-title"><span class="tt-tag">LT</span><span class="lang-ja">なんか小さくてかわいいGoなやつ</span><span class="lang-en">Something Small, Cute, and Go</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">Yasutaka Kato</span><span class="lang-en">Yasutaka Kato</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            15:45
+                        </td>
+                        <td class="tt-session">
+                            <div class="tt-title"><span class="tt-tag">LT</span><span class="lang-ja">Learning Go by Building Things</span><span class="lang-en">Learning Go by Building Things</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">CONEJO / コネホ</span><span class="lang-en">CONEJO</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            15:50
+                        </td>
+                        <td class="tt-session">
+                            <div class="tt-title"><span class="tt-tag">LT</span><span class="lang-ja">5分でチョットわかるTinyGoでGBA開発</span><span class="lang-en">GBA Development with TinyGo in 5 Minutes</span></div>
+                            <div class="tt-speaker"><span class="lang-ja">ixxxy</span><span class="lang-en">ixxxy</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            15:55
+                        </td>
+                        <td class="tt-gap" rowspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            16:10
+                        </td>
+                        <td class="tt-session meta" rowspan="6">
+                            <div class="tt-title"><span class="lang-ja">セッション (調整中)</span><span class="lang-en">Session (TBD / Under arrangement)</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            16:40
+                        </td>
+                        <td class="tt-gap" rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time">
+                            16:50
+                        </td>
+                        <td class="tt-session meta" rowspan="4">
+                            <div class="tt-title"><span class="lang-ja">クロージング</span><span class="lang-en">Closing Remarks</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr>
+                        <td class="tt-time cont"></td>
+                    </tr>
+                    <tr class="tt-edge">
+                        <td class="tt-time">17:10</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-speakers" role="tabpanel">
+                <div class="speaker-grid">
+                    <div class="speaker">
+                        <img src="images/speakers/rdon_key.png" alt="rdon-key" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/rdon_key/" target="_blank"><span class="lang-ja">あーるどん (rdon-key)</span><span class="lang-en">rdon-key</span></a></div>
+                            <div class="speaker-session"><span class="lang-ja">マルチコア時代の組み込み開発。mutexが破綻するとき。</span><span class="lang-en">Embedded Development in the Multi-Core Era: When Mutex Breaks Down</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/hnw.png" alt="hnw" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/hnw/" target="_blank">hnw</a></div>
+                            <div class="speaker-session"><span class="lang-ja">TinyGoで時計を作ったら、DNSからTLSまで調べることになった</span><span class="lang-en">Building a Clock with TinyGo Led Me Down the Rabbit Hole from DNS to TLS</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/YuukiHayashi0510.png" alt="Rinrin" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/YuukiHayashi0510/" target="_blank">Rinrin</a></div>
+                            <div class="speaker-session"><span class="lang-ja">TinyGoから理解するHID</span><span class="lang-en">Understanding HID through TinyGo</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/nobonobo.png" alt="NoboNobo" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/nobonobo/" target="_blank">NoboNobo</a></div>
+                            <div class="speaker-session"><span class="lang-ja">TinyGoとGoをつなぐRPC</span><span class="lang-en">Connecting TinyGo and Go with RPC</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/siv428.png" alt="sivchari" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/siv428/" target="_blank">sivchari</a></div>
+                            <div class="speaker-session"><span class="lang-ja">Big/Tiny GOTOOLCHAIN</span><span class="lang-en">Big/Tiny GOTOOLCHAIN</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/ymotongpoo.png" alt="Yoshiki Yamaguchi" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/ymotongpoo/" target="_blank"><span class="lang-ja">山口能迪</span><span class="lang-en">Yoshiki Yamaguchi</span></a></div>
+                            <div class="speaker-session"><span class="lang-ja">TinyGoでオブザーバビリティ？OpenTelemetryはTinyGoで使えるのか</span><span class="lang-en">Observability with TinyGo? Can We Use OpenTelemetry with TinyGo?</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/hokki.png" alt="Ibuki" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/hokki/" target="_blank">Ibuki</a></div>
+                            <div class="speaker-session"><span class="lang-ja">LT) ワークショップで作ったzero-kb02をCodexの物理UIにしてみた</span><span class="lang-en">[LT] Turning the zero-kb02 from the Workshop into a Physical UI for Codex</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/makki_d.png" alt="MakKi" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/makki_d/" target="_blank">MakKi</a></div>
+                            <div class="speaker-session"><span class="lang-ja">LT) zero-micro：Codex Microがzero-kb02にそっくりだったので作ったった</span><span class="lang-en">[LT] zero-micro: Built It Because Codex Micro Looked Just Like zero-kb02</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/yasutakatou.png" alt="Yasutaka Kato" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/yasutakatou/" target="_blank">Yasutaka Kato</a></div>
+                            <div class="speaker-session"><span class="lang-ja">LT) なんか小さくてかわいいGoなやつ</span><span class="lang-en">[LT] Something Small, Cute, and Go</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/conejoninja.png" alt="CONEJO" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/conejoninja/" target="_blank"><span class="lang-ja">CONEJO / コネホ</span><span class="lang-en">CONEJO</span></a></div>
+                            <div class="speaker-session"><span class="lang-ja">LT) Learning Go by Building Things</span><span class="lang-en">[LT] Learning Go by Building Things</span></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/speakers/ixxxy.png" alt="ixxxy" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://connpass.com/user/ixxxy/" target="_blank">ixxxy</a></div>
+                            <div class="speaker-session"><span class="lang-ja">LT) 5分でチョットわかるTinyGoでGBA開発</span><span class="lang-en">[LT] GBA Development with TinyGo in 5 Minutes</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        <section class="section">
+            <h2 class="section-title">
                 <span class="lang-ja">スピーカー募集</span>
                 <span class="lang-en">Call for Speakers</span>
             </h2>
@@ -279,6 +868,7 @@
                 <span class="lang-en">Sponsor applications are closed</span>
             </div>
         </div>
+        -->
 
         <footer>
             <div>
@@ -315,6 +905,20 @@
     setLanguage(initial);
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+    });
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = 'tab-' + btn.getAttribute('data-tab');
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                const on = b === btn;
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-selected', on);
+            });
+            document.querySelectorAll('.tab-panel').forEach(p => {
+                p.classList.toggle('active', p.id === target);
+            });
+        });
     });
 </script>
 </body>

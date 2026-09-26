@@ -193,6 +193,23 @@
         .speaker-name a:hover { border-bottom-color: var(--accent); }
         .speaker-session { font-size: 13px; color: var(--fg-dim); margin-top: 8px; line-height: 1.4; }
 
+        .staff-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1px; background: var(--line);
+            border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+        }
+        .staff {
+            background: rgba(10, 14, 26, 0.6); padding: 16px 20px;
+            display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: center;
+        }
+        .staff-photo {
+            width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
+            background: var(--accent-soft); border: 1px solid var(--line);
+        }
+        .staff-name { font-size: 15px; font-weight: 500; line-height: 1.3; }
+        .staff-name a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: border-color 0.15s; }
+        .staff-name a:hover { border-bottom-color: var(--accent); }
+
         .status-row { display: flex; flex-wrap: wrap; gap: 12px; }
         .status {
             display: inline-flex; align-items: center; gap: 10px;
@@ -754,77 +771,77 @@
             <div class="tab-panel" id="tab-speakers" role="tabpanel">
                 <div class="speaker-grid">
                     <div class="speaker">
-                        <img src="images/speakers/rdon_key.png" alt="rdon-key" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/rdon_key.png" alt="rdon-key" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/rdon_key/" target="_blank"><span class="lang-ja">あーるどん (rdon-key)</span><span class="lang-en">rdon-key</span></a></div>
                             <div class="speaker-session"><span class="lang-ja">マルチコア時代の組み込み開発。mutexが破綻するとき。</span><span class="lang-en">Embedded Development in the Multi-Core Era: When Mutex Breaks Down</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/hnw.png" alt="hnw" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/hnw.png" alt="hnw" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/hnw/" target="_blank">hnw</a></div>
                             <div class="speaker-session"><span class="lang-ja">TinyGoで時計を作ったら、DNSからTLSまで調べることになった</span><span class="lang-en">Building a Clock with TinyGo Led Me Down the Rabbit Hole from DNS to TLS</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/YuukiHayashi0510.png" alt="Rinrin" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/YuukiHayashi0510.png" alt="Rinrin" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/YuukiHayashi0510/" target="_blank">Rinrin</a></div>
                             <div class="speaker-session"><span class="lang-ja">TinyGoから理解するHID</span><span class="lang-en">Understanding HID through TinyGo</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/nobonobo.png" alt="NoboNobo" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/nobonobo.png" alt="NoboNobo" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/nobonobo/" target="_blank">NoboNobo</a></div>
                             <div class="speaker-session"><span class="lang-ja">TinyGoとGoをつなぐRPC</span><span class="lang-en">Connecting TinyGo and Go with RPC</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/siv428.png" alt="sivchari" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/siv428.png" alt="sivchari" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/siv428/" target="_blank">sivchari</a></div>
                             <div class="speaker-session"><span class="lang-ja">Big/Tiny GOTOOLCHAIN</span><span class="lang-en">Big/Tiny GOTOOLCHAIN</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/ymotongpoo.png" alt="Yoshiki Yamaguchi" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/ymotongpoo.png" alt="Yoshiki Yamaguchi" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/ymotongpoo/" target="_blank"><span class="lang-ja">山口能迪</span><span class="lang-en">Yoshiki Yamaguchi</span></a></div>
                             <div class="speaker-session"><span class="lang-ja">TinyGoでオブザーバビリティ？OpenTelemetryはTinyGoで使えるのか</span><span class="lang-en">Observability with TinyGo? Can We Use OpenTelemetry with TinyGo?</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/hokki.png" alt="Ibuki" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/hokki.png" alt="Ibuki" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/hokki/" target="_blank">Ibuki</a></div>
                             <div class="speaker-session"><span class="lang-ja">LT) ワークショップで作ったzero-kb02をCodexの物理UIにしてみた</span><span class="lang-en">[LT] Turning the zero-kb02 from the Workshop into a Physical UI for Codex</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/makki_d.png" alt="MakKi" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/makki_d.png" alt="MakKi" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/makki_d/" target="_blank">MakKi</a></div>
                             <div class="speaker-session"><span class="lang-ja">LT) zero-micro：Codex Microがzero-kb02にそっくりだったので作ったった</span><span class="lang-en">[LT] zero-micro: Built It Because Codex Micro Looked Just Like zero-kb02</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/yasutakatou.png" alt="Yasutaka Kato" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/yasutakatou.png" alt="Yasutaka Kato" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/yasutakatou/" target="_blank">Yasutaka Kato</a></div>
                             <div class="speaker-session"><span class="lang-ja">LT) なんか小さくてかわいいGoなやつ</span><span class="lang-en">[LT] Something Small, Cute, and Go</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/conejoninja.png" alt="CONEJO" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/conejoninja.png" alt="CONEJO" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/conejoninja/" target="_blank"><span class="lang-ja">CONEJO / コネホ</span><span class="lang-en">CONEJO</span></a></div>
                             <div class="speaker-session"><span class="lang-ja">LT) Learning Go by Building Things</span><span class="lang-en">[LT] Learning Go by Building Things</span></div>
                         </div>
                     </div>
                     <div class="speaker">
-                        <img src="images/speakers/ixxxy.png" alt="ixxxy" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <img src="images/avatars/ixxxy.png" alt="ixxxy" class="speaker-photo" width="48" height="48" loading="lazy">
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/ixxxy/" target="_blank">ixxxy</a></div>
                             <div class="speaker-session"><span class="lang-ja">LT) 5分でチョットわかるTinyGoでGBA開発</span><span class="lang-en">[LT] GBA Development with TinyGo in 5 Minutes</span></div>
@@ -869,6 +886,76 @@
             </div>
         </div>
         -->
+
+        <section class="section">
+            <h2 class="section-title">
+                <span class="lang-ja">スタッフ</span>
+                <span class="lang-en">Staff</span>
+            </h2>
+            <p class="section-text">
+                <span class="lang-ja">TinyGo Conference 2026 の運営スタッフです。</span>
+                <span class="lang-en">The organizing staff of TinyGo Conference 2026.</span>
+            </p>
+            <div class="staff-grid">
+                <div class="staff">
+                    <img src="images/avatars/sago35tk.png" alt="sago35tk" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/sago35tk" target="_blank" rel="noopener noreferrer"><span class="lang-ja">さご</span><span class="lang-en">Takasago</span></a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/ysaito.png" alt="ysaito" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/ysaito8015" target="_blank" rel="noopener noreferrer">ysaito</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/senoue.jpg" alt="Senoue" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/senoue" target="_blank" rel="noopener noreferrer">Senoue</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/mi-shirakawa.png" alt="micchie" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/micchiebear" target="_blank" rel="noopener noreferrer">micchie</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/ken5owata.png" alt="satoken" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/ken5owata" target="_blank" rel="noopener noreferrer">satoken</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/taknb2nch.png" alt="taknb2nch" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/taknb2nch" target="_blank" rel="noopener noreferrer">taknb2nch</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/makki_d.png" alt="MakKi" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/makki_d" target="_blank" rel="noopener noreferrer">MakKi</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/Tam.png" alt="Tam" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/tam_x" target="_blank" rel="noopener noreferrer">Tam</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/noah0x00.png" alt="KojiKa" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/_ko2ka_" target="_blank" rel="noopener noreferrer">KojiKa</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/logica0419.png" alt="Takuto Nagami" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/logica0419" target="_blank" rel="noopener noreferrer">Takuto Nagami</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/YuukiHayashi0510.png" alt="Rinrin" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/rin2yh" target="_blank" rel="noopener noreferrer">Rinrin</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/luccafort.png" alt="luccafort" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/intent/user?user_id=46295895" target="_blank" rel="noopener noreferrer">luccafort</a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/riku-0904.png" alt="rikut0904" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/intent/user?user_id=1903825280910938112" target="_blank" rel="noopener noreferrer"><span class="lang-ja">りくと</span><span class="lang-en">rikut0904</span></a></div>
+                </div>
+                <div class="staff">
+                    <img src="images/avatars/hutoccho_boshi.png" alt="hutoboshi" class="staff-photo" width="40" height="40" loading="lazy">
+                    <div class="staff-name"><a href="https://x.com/hutoccho_boshi" target="_blank" rel="noopener noreferrer">hutoboshi</a></div>
+                </div>
+            </div>
+        </section>
+
 
         <footer>
             <div>

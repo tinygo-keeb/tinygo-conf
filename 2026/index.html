@@ -1356,11 +1356,20 @@
         if (e.key === 'Escape' && !modal.hidden) closeSession();
     });
 
-    const BLOG_FEED_URL = 'https://tinygo-keeb.org/blog/?feed=rss2&cat=9';
+    // RSS フィード (?feed=rss2) は CORS ヘッダーを返さないため、REST API を使う
     const BLOG_MAX_ITEMS = 10;
+    const BLOG_API_URL = 'https://tinygo-keeb.org/blog/index.php?rest_route=/wp/v2/posts'
+        + '&categories=9&per_page=' + BLOG_MAX_ITEMS + '&_fields=title,link,date';
 
     function escapeHtml(str) {
         return str.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    // title.rendered は HTML エンティティ入り (&#8211; など) なので、一度プレーンテキストに戻す
+    function decodeHtml(html) {
+        const el = document.createElement('textarea');
+        el.innerHTML = html;
+        return el.value;
     }
 
     async function loadBlogPosts() {
@@ -1368,25 +1377,22 @@
         if (!list) return;
 
         try {
-            const res = await fetch(BLOG_FEED_URL);
+            const res = await fetch(BLOG_API_URL);
             if (!res.ok) throw new Error('HTTP ' + res.status);
 
-            const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
-            if (xml.querySelector('parsererror')) throw new Error('RSS parse error');
+            const posts = await res.json();
+            if (!Array.isArray(posts) || posts.length === 0) return;
 
-            const items = Array.from(xml.querySelectorAll('item')).slice(0, BLOG_MAX_ITEMS);
-            if (items.length === 0) return;
-
-            list.innerHTML = items.map(item => {
-                const title = item.querySelector('title')?.textContent || 'Untitled';
-                const link = item.querySelector('link')?.textContent || '#';
-                const date = new Date(item.querySelector('pubDate')?.textContent || '');
-                const dateText = isNaN(date) ? '' :
-                    `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+            list.innerHTML = posts.slice(0, BLOG_MAX_ITEMS).map(post => {
+                const title = decodeHtml(post.title?.rendered || '') || 'Untitled';
+                const link = /^https?:\/\//.test(post.link || '') ? post.link : '#';
+                // date は "2026-09-22T09:37:51" (サイトのローカル時刻・TZ 無し) なので日付部分だけ使う
+                const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(post.date || '');
+                const dateText = m ? `${m[1]}.${m[2]}.${m[3]}` : '';
                 const isJa = /[\u3040-\u30ff\u4e00-\u9faf]/.test(title);
                 return `<div class="blog-item">
                     <div class="blog-date">${dateText}</div>
-                    <div class="blog-title"><a href="${encodeURI(link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(title)}</a>${isJa ? '<span class="lang-en blog-note"> (Japanese)</span>' : ''}</div>
+                    <div class="blog-title"><a href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(title)}</a>${isJa ? '<span class="lang-en blog-note"> (Japanese)</span>' : ''}</div>
                 </div>`;
             }).join('');
         } catch (e) {

@@ -291,6 +291,8 @@
         .blog-title a:hover { border-bottom-color: var(--accent); }
         .blog-note { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-dim); }
         .blog-empty { background: rgba(10, 14, 26, 0.6); padding: 20px 24px; color: var(--fg-dim); font-size: 14px; }
+        .blog-empty a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: border-color 0.15s; }
+        .blog-empty a:hover { border-bottom-color: var(--accent); }
 
         .status-row { display: flex; flex-wrap: wrap; gap: 12px; }
         .status {
@@ -1397,6 +1399,11 @@
             }).join('');
         } catch (e) {
             console.error('Failed to load blog posts:', e);
+            // 「記事がない」と区別できるよう、読み込み失敗は別のメッセージにする
+            list.innerHTML = `<div class="blog-empty">
+                <span class="lang-ja">ブログ記事の読み込みに失敗しました。<a href="https://tinygo-keeb.org/blog/" target="_blank" rel="noopener noreferrer">ブログサイトで直接ご覧ください。</a></span>
+                <span class="lang-en">Failed to load blog posts. <a href="https://tinygo-keeb.org/blog/" target="_blank" rel="noopener noreferrer">Please visit the blog site directly.</a></span>
+            </div>`;
         }
     }
     loadBlogPosts();

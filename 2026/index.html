@@ -816,8 +816,9 @@
                         <td class="tt-time">
                             16:10
                         </td>
-                        <td class="tt-session meta" rowspan="6">
-                            <div class="tt-title"><span class="lang-ja">セッション (調整中)</span><span class="lang-en">Session (TBD / Under arrangement)</span></div>
+                        <td class="tt-session" rowspan="6">
+                            <div class="tt-title"><span class="tt-tag">Keynote</span><button type="button" class="session-open" data-session="deadprogram">TinyGo To The Year 2053</button></div>
+                            <div class="tt-speaker">Ron Evans <span class="tt-org">The Hybrid Group</span></div>
                         </td>
                     </tr>
                     <tr>
@@ -956,6 +957,13 @@
                         <div>
                             <div class="speaker-name"><a href="https://connpass.com/user/ixxxy/" target="_blank">ixxxy</a></div>
                             <div class="speaker-session"><button type="button" class="session-open" data-session="ixxxy"><span class="lang-ja">LT) 5分でチョットわかるTinyGoでGBA開発</span><span class="lang-en">[LT] GBA Development with TinyGo in 5 Minutes</span></button></div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <img src="images/avatars/deadprogram.jpg" alt="Ron Evans" class="speaker-photo" width="48" height="48" loading="lazy">
+                        <div>
+                            <div class="speaker-name"><a href="https://bsky.app/profile/deadprogram.com" target="_blank">Ron Evans</a></div>
+                            <div class="speaker-session"><button type="button" class="session-open" data-session="deadprogram">TinyGo To The Year 2053</button></div>
                         </div>
                     </div>
                 </div>
@@ -1275,6 +1283,17 @@
    "IoT"
   ],
   "abstract": "<p>筆者はTinyGoでシンプルな時計を実装しました。M5Stackを使い、NTPで時刻を取得し、HTTPSのAPIからタイムゾーン情報を取れば完成する予定でした。<\/p><p>しかし、ネットワーク通信を実装しているうちにバグに気づいてしまい、組み込み向けPure Goネットワークスタック lneto にPull Requestを送ることになりました。さらにlnetoを使う構成ではHTTPSが利用できないことに気づき、Go本家の crypto/tls を持ち込んでHTTPSを動かす実験まで行いました。<\/p><p>このセッションでは、この一連の試行錯誤を通して、TinyGoでインターネット通信をするときにWi-Fi、IP、DNS、TCP、HTTP、TLSの各レイヤーを誰が担当しているのかを整理します。また、ヒープレスを志向し、固定長バッファやメモリ再利用を徹底するlnetoの設計が、普段のGoプログラミングとどのように違うのかも紹介します。<\/p><p>Go標準ライブラリによるHTTPSは実際にTLS 1.2 / 1.3で動作しました。しかしTLS handshake時のheap使用量が約300KBに達し、RAM 520KBのPico 2 Wでもほぼ限界でした。この結果から、組み込み向けTLS実装がなぜ必要なのか、そしてTinyGoでHTTPSを現実的に使えるようにするには何が足りないのかを考えます。<\/p><p>PC上のGoでは当たり前に使えるネットワーク機能を、TinyGo環境でどう成立させ、未完成の部分をどう作っていくのか。その面白さを共有します。<\/p>"
+ },
+ "deadprogram": {
+  "name": "Ron Evans",
+  "org": "The Hybrid Group",
+  "avatar": "images/avatars/deadprogram.jpg",
+  "title": "TinyGo To The Year 2053",
+  "titleEn": "TinyGo To The Year 2053",
+  "language": "English",
+  "duration": "Keynote (30min)",
+  "topics": [],
+  "abstract": "<p>From humble beginnings to a worldwide movement, TinyGo continues to amaze us all with what you can do with this beautiful language. But will it last? Let's take a look at the details of TinyGo as part of a physical AI system that you won't see until the year 2053...</p>"
  }
 }
 </script>

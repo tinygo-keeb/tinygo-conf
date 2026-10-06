@@ -218,6 +218,19 @@
         .staff-name a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: border-color 0.15s; }
         .staff-name a:hover { border-bottom-color: var(--accent); }
 
+        .sponsor-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .sponsor {
+            display: flex; align-items: center; justify-content: center;
+            height: 140px; padding: 14px 28px;
+            background: #fff; border: 1px solid var(--line); border-radius: 8px;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .sponsor:hover { transform: translateY(-2px); box-shadow: 0 0 0 2px var(--accent); }
+        .sponsor img { display: block; max-width: min(100%, 210px); max-height: 100%; object-fit: contain; }
+
         .session-open {
             font: inherit; color: inherit; background: none; border: 0; padding: 0;
             text-align: left; cursor: pointer;
@@ -1011,6 +1024,28 @@
             </div>
         </div>
         -->
+
+        <section class="section">
+            <h2 class="section-title">
+                <span class="lang-ja">スポンサー</span>
+                <span class="lang-en">Sponsors</span>
+            </h2>
+            <p class="section-text">
+                <span class="lang-ja">TinyGo Conference 2026 を支援してくださる企業・団体の皆様に感謝いたします。</span>
+                <span class="lang-en">We thank all the companies and organizations supporting TinyGo Conference 2026.</span>
+            </p>
+            <div class="sponsor-grid">
+                <a class="sponsor" href="https://jlcpcb.com/jp/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/jlcpcb.png" alt="JLCPCB" loading="lazy">
+                </a>
+                <a class="sponsor" href="https://gophers.jp/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/GophersJapan.png" alt="Gophers Japan" loading="lazy">
+                </a>
+                <a class="sponsor" href="https://www.switch-science.com/pages/company" target="_blank" rel="noopener noreferrer">
+                    <img src="images/switchscience.png" alt="スイッチサイエンス" loading="lazy">
+                </a>
+            </div>
+        </section>
 
         <section class="section">
             <h2 class="section-title">
